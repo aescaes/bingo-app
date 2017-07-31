@@ -7,11 +7,60 @@
   font-family: 'Khula';
   font-weight: 800;
   src: url("../fonts/Khula/Khula-Black.ttf") format("truetype"); }
+*:focus {
+  outline: 0; }
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Khula'; }
+
+label {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #00c5e6;
+  margin-right: 5px; }
+
+.inp-txt {
+  border-radius: 50px;
+  border: 1px solid #00c5e6;
+  padding: 10px 20px 10px 20px;
+  color: #00c5e6;
+  transition: all 0.3s ease; }
+
+.inp-txt:hover, .inp-txt:focus {
+  box-shadow: 0 0 5px #00c5e6; }
+
+.btn {
+  border-radius: 50px;
+  border: 1px solid #00c5e6;
+  background: #fff;
+  color: #00c5e6;
+  padding: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 3px;
+  transition: all 0.3s ease; }
+
+.btn:hover {
+  background: #00c5e6;
+  color: #fff; }
+
+.btn:active {
+  background: #0099b3; }
+
+.btn.danger {
+  border-color: crimson;
+  color: crimson; }
+
+.btn.danger:hover {
+  background: crimson;
+  color: #fff; }
+
+.btn.danger:active {
+  background: #ad102f; }
 
 #wrapper {
   min-height: 100%;
@@ -41,11 +90,22 @@ html, body {
         border-left: 2px solid #00c5e6;
         border-bottom: 2px solid #00c5e6;
         color: #00c5e6;
-        transition: all .3s ease; }
+        transition: all 0.3s ease; }
       #wrapper #row-bingo .bingo-row .bingo-cell:hover {
         background: #006e80; }
       #wrapper #row-bingo .bingo-row .bingo-cell:active {
         background: #00424d; }
+  #wrapper #row-control {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid #00c5e6; }
+    #wrapper #row-control #col-left .inp-txt {
+      width: 20px;
+      text-align: center;
+      font-weight: 700; }
+    #wrapper #row-control #col-left #btn-mark {
+      margin-right: 20px; }
   #wrapper #row-footer {
     flex: 2; }
 

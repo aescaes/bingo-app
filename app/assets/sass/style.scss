@@ -1,14 +1,67 @@
 @import "_fonts";
 
 $primary-color: #00c5e6;
+$danger-color: crimson;
 $cell-base-border: 2px solid $primary-color;
 $cell-marked-bg: darken($primary-color, 20%);
+$base-transition: all .3s ease;
+
+*:focus {
+	outline: 0;
+}
 
 html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	font-family: 'Khula';
+}
+
+label {
+	font-weight: 800;
+	text-transform: uppercase;
+	color: $primary-color;
+	margin-right: 5px;
+}
+.inp-txt {
+	border-radius: 50px;
+	border: 1px solid $primary-color;
+	padding: 10px 20px 10px 20px;
+	color: $primary-color;
+	transition: $base-transition;
+}
+.inp-txt:hover, .inp-txt:focus {
+	box-shadow: 0 0 5px $primary-color;
+}
+.btn {
+	border-radius: 50px;
+	border: 1px solid $primary-color;
+	background: #fff;
+	color: $primary-color;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 11px;
+	letter-spacing: 3px;
+	transition: $base-transition;
+}
+.btn:hover {
+	background: $primary-color;
+	color: #fff;
+}
+.btn:active {
+	background: darken($primary-color, 10%);
+}
+.btn.danger {
+	border-color: $danger-color;
+	color: $danger-color;
+}
+.btn.danger:hover {
+	background: $danger-color;
+	color: #fff;
+}
+.btn.danger:active {
+	background: darken($danger-color, 10%);
 }
 
 #wrapper {
@@ -47,13 +100,32 @@ html, body {
 				border-left: $cell-base-border;
 				border-bottom: $cell-base-border;
 				color: $primary-color;
-				transition: all .3s ease;
+				transition: $base-transition;
 			}
 			.bingo-cell:hover {
 				background: $cell-marked-bg;
 			}
 			.bingo-cell:active {
 				background: darken($primary-color, 30%);
+			}
+		}
+	}
+
+	#row-control {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+		border-bottom: $cell-base-border;
+		//background: darken($primary-color, 10%);
+
+		#col-left {
+			.inp-txt {
+				width: 20px;
+				text-align: center;
+				font-weight: 700;
+			}
+			#btn-mark {
+				margin-right: 20px;
 			}
 		}
 	}
