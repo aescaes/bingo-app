@@ -107,7 +107,6 @@ label {
     #wrapper #row-control #col-left #btn-mark {
       margin-right: 20px; }
   #wrapper #row-footer {
-    flex: 2;
     display: flex;
     flex-direction: row; }
     #wrapper #row-footer > div {
@@ -116,5 +115,12 @@ label {
       flex-direction: column;
       justify-content: center;
       text-align: center; }
+    #wrapper #row-footer #col-current-pattern table#current-pattern thead th {
+      width: 30px;
+      color: #00c5e6; }
+    #wrapper #row-footer #col-current-pattern table#current-pattern tbody tr td {
+      background: #00c5e6;
+      height: 30px;
+      border-radius: 100%; }
 
 /*# sourceMappingURL=style.css.map */
