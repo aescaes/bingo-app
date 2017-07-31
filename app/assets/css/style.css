@@ -116,13 +116,13 @@ label {
       justify-content: center;
       text-align: center;
       border-left: 2px solid #00c5e6; }
-    #wrapper #row-footer #col-current-pattern table#current-pattern thead th {
-      width: 30px;
+    #wrapper #row-footer #col-current-pattern {
       color: #00c5e6; }
-    #wrapper #row-footer #col-current-pattern table#current-pattern tbody tr td {
-      background: #00c5e6;
-      height: 30px;
-      border-radius: 100%; }
+      #wrapper #row-footer #col-current-pattern table#current-pattern td {
+        background: #00c5e6;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%; }
     #wrapper #row-footer #col-current-draw {
       color: #00c5e6; }
       #wrapper #row-footer #col-current-draw #current-draw-number {
