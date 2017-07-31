@@ -114,7 +114,8 @@ label {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      text-align: center; }
+      text-align: center;
+      border-left: 2px solid #00c5e6; }
     #wrapper #row-footer #col-current-pattern table#current-pattern thead th {
       width: 30px;
       color: #00c5e6; }
@@ -122,5 +123,10 @@ label {
       background: #00c5e6;
       height: 30px;
       border-radius: 100%; }
+    #wrapper #row-footer #col-current-draw {
+      color: #00c5e6; }
+      #wrapper #row-footer #col-current-draw #current-draw-number {
+        font-weight: 800;
+        font-size: 100px; }
 
 /*# sourceMappingURL=style.css.map */
