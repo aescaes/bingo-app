@@ -26,6 +26,10 @@ html, body {
 			display: flex;
 			flex-direction: row;
 
+			.primary-cell {
+				text-transform: uppercase;
+			}
+
 			.bingo-col {
 				flex: 1;
 			}

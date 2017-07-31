@@ -17,6 +17,8 @@ html, body {
       flex: 1;
       display: flex;
       flex-direction: row; }
+      #wrapper #row-bingo .bingo-row .primary-cell {
+        text-transform: uppercase; }
       #wrapper #row-bingo .bingo-row .bingo-col {
         flex: 1; }
   #wrapper #row-footer {
