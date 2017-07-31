@@ -1,5 +1,9 @@
 @import "_fonts";
 
+$primary-color: #00c5e6;
+$cell-base-border: 2px solid $primary-color;
+$cell-marked-bg: darken($primary-color, 20%);
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -26,6 +30,9 @@ html, body {
 
 			.primary-cell {
 				text-transform: uppercase;
+				background: $primary-color;
+				color: #fff !important;
+				background: $primary-color !important;
 			}
 
 			.bingo-cell {
@@ -35,6 +42,18 @@ html, body {
 				flex-direction: column;
 				justify-content: center;
 				text-align: center;
+				font-weight: 800;
+				font-size: 30px;
+				border-left: $cell-base-border;
+				border-bottom: $cell-base-border;
+				color: $primary-color;
+				transition: all .3s ease;
+			}
+			.bingo-cell:hover {
+				background: $cell-marked-bg;
+			}
+			.bingo-cell:active {
+				background: darken($primary-color, 30%);
 			}
 		}
 	}
