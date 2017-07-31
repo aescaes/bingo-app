@@ -1,15 +1,13 @@
+@import "_fonts";
+
 html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-family: 'Khula';
 }
 
 #wrapper {
-	//temp
-	div {
-		border: 1px solid gray;
-	}
-
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -30,8 +28,13 @@ html, body {
 				text-transform: uppercase;
 			}
 
-			.bingo-col {
+			.bingo-cell {
 				flex: 1;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
 			}
 		}
 	}

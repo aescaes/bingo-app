@@ -25,13 +25,13 @@ $(document).ready(function() {
 
 		//append primary cell to current row
 		$("#bingo-" + bingoLetter).append(
-				"<div class='bingo-col primary-cell' id='bingo-cell-b'>" + bingoLetter + "</div>"
+				"<div class='bingo-cell primary-cell' id='bingo-cell-b'>" + bingoLetter + "</div>"
 			);
 
 		//append number cells to current row
 		for(var cellNum = rowCellStartNum; cellNum <= rowCellStartNum + 14; cellNum++) {
 			$("#bingo-" + bingoLetter).append(
-				"<div class='bingo-col' id='bingo-cell-b-" + cellNum + "'>" + cellNum + "</div>"
+				"<div class='bingo-cell' id='bingo-cell-b-" + cellNum + "'>" + cellNum + "</div>"
 			);
 		}
 	}
