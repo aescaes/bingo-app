@@ -29,7 +29,7 @@ label {
 .inp-txt {
   border-radius: 50px;
   border: 1px solid #00c5e6;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 10px 10px 10px;
   color: #00c5e6;
   transition: all 0.3s ease; }
 
@@ -112,8 +112,10 @@ label {
           color: #00c5e6;
           transition: all 0.3s ease; }
         #wrapper #main #row-bingo .bingo-row .bingo-cell:hover {
-          background: #006e80; }
+          background: #00424d; }
         #wrapper #main #row-bingo .bingo-row .bingo-cell:active {
+          background: #00161a; }
+        #wrapper #main #row-bingo .bingo-row .bingo-cell.marked {
           background: #00424d; }
     #wrapper #main #row-control {
       display: flex;
@@ -121,11 +123,13 @@ label {
       padding: 10px;
       border-bottom: 2px solid #00c5e6; }
       #wrapper #main #row-control #col-left .inp-txt {
-        width: 20px;
+        width: 30px;
         text-align: center;
-        font-weight: 700; }
-      #wrapper #main #row-control #col-left #btn-mark {
-        margin-right: 20px; }
+        font-weight: 700;
+        margin-right: 30px; }
+      #wrapper #main #row-control #col-right #btn-pattern {
+        width: 37px;
+        height: 37px; }
     #wrapper #main #row-footer {
       display: flex;
       flex-direction: row; }

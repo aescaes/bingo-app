@@ -4,7 +4,7 @@ $primary-color: #00c5e6;
 $danger-color: crimson;
 $success-color: #24f194;
 $cell-base-border: 2px solid $primary-color;
-$cell-marked-bg: darken($primary-color, 20%);
+$cell-marked-bg: darken($primary-color, 30%);
 $base-transition: all .3s ease;
 
 *:focus {
@@ -27,7 +27,7 @@ label {
 .inp-txt {
 	border-radius: 50px;
 	border: 1px solid $primary-color;
-	padding: 10px 20px 10px 20px;
+	padding: 10px 10px 10px 10px;
 	color: $primary-color;
 	transition: $base-transition;
 }
@@ -125,7 +125,11 @@ label {
 					background: $cell-marked-bg;
 				}
 				.bingo-cell:active {
-					background: darken($primary-color, 30%);
+					background: darken($primary-color, 40%);
+				}
+
+				.bingo-cell.marked {
+					background: $cell-marked-bg;
 				}
 			}
 		}
@@ -139,12 +143,17 @@ label {
 
 			#col-left {
 				.inp-txt {
-					width: 20px;
+					width: 30px;
 					text-align: center;
 					font-weight: 700;
+					margin-right: 30px;
 				}
-				#btn-mark {
-					margin-right: 20px;
+			}
+
+			#col-right {
+				#btn-pattern {
+					width: 37px;
+					height: 37px;
 				}
 			}
 		}
