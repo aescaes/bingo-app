@@ -5,6 +5,7 @@ $(document).ready(function() {
 	else {
 		var password = "1234";
 		loadBingoCells();
+		loadPatterns();
 		
 		/****Page Transition (start)****/
 		/*

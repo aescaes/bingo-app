@@ -1,5 +1,5 @@
 /*
- * Appends the 5 bingo rows (b, i, n, g, o)
+ * Appends the 5 bingo rows (b, i, n, g, o) to page
  */
 function loadBingoCells() {
 	for(var c = 1; c <= 5; c++) {
@@ -49,5 +49,38 @@ function loadBingoCells() {
 				//initialize the cell state to unmarked;
 				localStorage.setItem(cellId, "unmarked");
 		}
+	}
+}
+
+/*
+ * Load pattern slots
+ */
+function loadPatterns() {
+	var numOfPattern = 8;
+
+	for(var patternNum = 1; patternNum <= numOfPattern; patternNum++) {
+		$("#patterns").append(
+			"<div id='pattern-block-" + patternNum + "'>" +
+			"  <table class='pattern' id='pattern-" + patternNum + "' align='center' cellspacing='10px'>" +
+			"  </table>" +
+			"</div>"
+		);
+
+		for(var row = 1; row <= 5; row++) {
+			$("#patterns #pattern-block-" + patternNum + " table").append(
+				"<tr id='r" + row + "'></tr>"
+			);
+
+			for(var col = 1; col <= 5; col++) {
+				$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
+					"<td id='pattern-r" + row + "c" + col + "'></td>"
+				);
+			}
+		}
+
+		$("#patterns #pattern-block-" + patternNum).append(
+			"<h1 class='pattern-name' id='pattern-" + patternNum + "-name'>Slot " + patternNum + "</h1>" +
+			"<button class='btn' id='btn-edit' data-pattern-num='pattern-" + patternNum + "'>Edit</button>"
+		);
 	}
 }
