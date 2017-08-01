@@ -77,69 +77,136 @@ label {
 		flex-direction: column;
 
 		#row-bingo {
-		flex: 4;
+			flex: 4;
 
-		display: flex;
-		flex-direction: column;
+			display: flex;
+			flex-direction: column;
 
-		.bingo-row {
-			flex: 1;
+			.bingo-row {
+				flex: 1;
 
+				display: flex;
+				flex-direction: row;
+
+				.primary-cell {
+					text-transform: uppercase;
+					background: $primary-color;
+					color: #fff !important;
+					background: $primary-color !important;
+				}
+
+				.bingo-cell {
+					flex: 1;
+
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					text-align: center;
+					font-weight: 800;
+					font-size: 30px;
+					border-left: $cell-base-border;
+					border-bottom: $cell-base-border;
+					color: $primary-color;
+					transition: $base-transition;
+				}
+				.bingo-cell:hover {
+					background: $cell-marked-bg;
+				}
+				.bingo-cell:active {
+					background: darken($primary-color, 30%);
+				}
+			}
+		}
+
+		#row-control {
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+			border-bottom: $cell-base-border;
+			//background: darken($primary-color, 10%);
+
+			#col-left {
+				.inp-txt {
+					width: 20px;
+					text-align: center;
+					font-weight: 700;
+				}
+				#btn-mark {
+					margin-right: 20px;
+				}
+			}
+		}
+
+		#row-footer {
 			display: flex;
 			flex-direction: row;
 
-			.primary-cell {
-				text-transform: uppercase;
-				background: $primary-color;
-				color: #fff !important;
-				background: $primary-color !important;
-			}
-
-			.bingo-cell {
+			> div {
 				flex: 1;
 
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				text-align: center;
-				font-weight: 800;
-				font-size: 30px;
 				border-left: $cell-base-border;
-				border-bottom: $cell-base-border;
+			}
+
+			#col-current-pattern {
 				color: $primary-color;
-				transition: $base-transition;
+
+				table#current-pattern {
+					td {
+						background: $primary-color;
+						width: 20px;
+						height: 20px;
+						border-radius: 100%;
+					}
+				}
 			}
-			.bingo-cell:hover {
-				background: $cell-marked-bg;
-			}
-			.bingo-cell:active {
-				background: darken($primary-color, 30%);
+
+			#col-current-draw {
+				color: $primary-color;
+
+				#current-draw-number {
+					font-weight: 800;
+					font-size: 100px;
+				}
 			}
 		}
 	}
 
-	#row-control {
-		display: flex;
-		justify-content: space-between;
-		padding: 10px;
-		border-bottom: $cell-base-border;
-		//background: darken($primary-color, 10%);
-
-		#col-left {
-			.inp-txt {
-				width: 20px;
-				text-align: center;
-				font-weight: 700;
-			}
-			#btn-mark {
-				margin-right: 20px;
-			}
-		}
+	#btn-add {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		margin: 30px;
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		border: 0;
+		background: $primary-color;
+		color: #fff;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+		transition: $base-transition;
+	}
+	#btn-add:hover {
+		bottom: 5px;
+		background: lighten($primary-color, 10%);
+	}
+	#btn-add:active {
+		bottom: 3px;
+		background: $primary-color;
 	}
 
-	#row-footer {
+	#patterns {
+		flex: 1;
+
 		display: flex;
 		flex-direction: row;
+
+		@media screen and(max-width: 425px) {
+			flex-direction: column;
+		}
 
 		> div {
 			flex: 1;
@@ -147,33 +214,28 @@ label {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			text-align: center;
-			border-left: $cell-base-border;
-		}
 
-		#col-current-pattern {
-			color: $primary-color;
-
-			table#current-pattern {
+			table.pattern {
 				td {
+					width: 50px;
+					height: 50px;
 					background: $primary-color;
-					width: 20px;
-					height: 20px;
 					border-radius: 100%;
 				}
 			}
-		}
 
-		#col-current-draw {
-			color: $primary-color;
-
-			#current-draw-number {
+			.pattern-name {
+				color: $primary-color;
 				font-weight: 800;
-				font-size: 100px;
+				text-transform: uppercase;
+				text-align: center;
+				letter-spacing: 5px;
+			}
+
+			#btn-delete-pattern {
+				width: 100px;
+				margin: 0 auto;
 			}
 		}
 	}
-	}
-
-	
 }

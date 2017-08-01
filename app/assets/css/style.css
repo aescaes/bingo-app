@@ -137,5 +137,50 @@ label {
         #wrapper #main #row-footer #col-current-draw #current-draw-number {
           font-weight: 800;
           font-size: 100px; }
+  #wrapper #btn-add {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 0;
+    background: #00c5e6;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease; }
+  #wrapper #btn-add:hover {
+    bottom: 5px;
+    background: #1adeff; }
+  #wrapper #btn-add:active {
+    bottom: 3px;
+    background: #00c5e6; }
+  #wrapper #patterns {
+    flex: 1;
+    display: flex;
+    flex-direction: row; }
+    @media screen and (max-width: 425px) {
+      #wrapper #patterns {
+        flex-direction: column; } }
+    #wrapper #patterns > div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      #wrapper #patterns > div table.pattern td {
+        width: 50px;
+        height: 50px;
+        background: #00c5e6;
+        border-radius: 100%; }
+      #wrapper #patterns > div .pattern-name {
+        color: #00c5e6;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 5px; }
+      #wrapper #patterns > div #btn-delete-pattern {
+        width: 100px;
+        margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
