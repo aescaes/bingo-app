@@ -5,8 +5,12 @@
   src: url("../fonts/Khula/Khula-Regular.ttf") format("truetype"); }
 @font-face {
   font-family: 'Khula';
+  font-weight: 700;
+  src: url("../fonts/Khula/Khula-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Khula';
   font-weight: 800;
-  src: url("../fonts/Khula/Khula-Black.ttf") format("truetype"); }
+  src: url("../fonts/Khula/Khula-ExtraBold.ttf") format("truetype"); }
 *:focus {
   outline: 0; }
 
