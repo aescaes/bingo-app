@@ -69,7 +69,8 @@ label {
 	display: flex;
 	flex-direction: column;
 
-	#row-bingo {
+	#main {
+		#row-bingo {
 		flex: 4;
 
 		display: flex;
@@ -166,4 +167,7 @@ label {
 			}
 		}
 	}
+	}
+
+	
 }

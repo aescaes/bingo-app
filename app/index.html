@@ -14,69 +14,72 @@
   </head>
   <body>
     <div id="wrapper">
-      <div class="primary-row" id="row-bingo">
+      <div id="main">
+        <div class="primary-row" id="row-bingo">
+        </div>
+        <div class="primary-row" id="row-control">
+          <div id="col-left">
+            <label for="inp-num-search">Number:</label>
+            <input class="inp-txt" id="inp-num-search">
+            <button class="btn" id="btn-mark">Mark</button>
+            <button class="btn" id="btn-recent">Recent</button>
+            <button class="btn danger" id="btn-clear">Clear</button>
+          </div>
+          <div id="col-right">
+            <button class="btn" id="btn-pattern"><i class="fa fa-angle-double-right"></i></button>
+          </div>
+        </div>
+        <div class="primary-row" id="row-footer">
+          <div id="col-logo">
+            <p>logo</p>
+          </div>
+          <div id="col-current-pattern">
+            <h2>Current Pattern</h2>
+            <table class="pattern" id="current-pattern" align="center" cellspacing="10px">
+              <tr>
+                <td id="pattern-r1c1"></td>
+                <td id="pattern-r1c2"></td>
+                <td id="pattern-r1c3"></td>
+                <td id="pattern-r1c4"></td>
+                <td id="pattern-r1c5"></td>
+              </tr>
+              <tr>
+                <td id="pattern-r2c1"></td>
+                <td id="pattern-r2c2"></td>
+                <td id="pattern-r2c3"></td>
+                <td id="pattern-r2c4"></td>
+                <td id="pattern-r2c5"></td>
+              </tr>
+              <tr>
+                <td id="pattern-r3c1"></td>
+                <td id="pattern-r3c2"></td>
+                <td id="pattern-r3c3 bonus"></td>
+                <td id="pattern-r3c4"></td>
+                <td id="pattern-r3c5"></td>
+              </tr>
+              <tr>
+                <td id="pattern-r4c1"></td>
+                <td id="pattern-r4c2"></td>
+                <td id="pattern-r4c3"></td>
+                <td id="pattern-r4c4"></td>
+                <td id="pattern-r4c5"></td>
+              </tr>
+              <tr>
+                <td id="pattern-r5c1"></td>
+                <td id="pattern-r5c2"></td>
+                <td id="pattern-r5c3"></td>
+                <td id="pattern-r5c4"></td>
+                <td id="pattern-r5c5"></td>
+              </tr>
+            </table>
+          </div>
+          <div id="col-current-draw">
+            <h2>Current Draw</h2>
+            <span id="current-draw-number">58</span>
+          </div>
+        </div>
       </div>
-      <div class="primary-row" id="row-control">
-        <div id="col-left">
-          <label for="inp-num-search">Number:</label>
-          <input class="inp-txt" id="inp-num-search">
-          <button class="btn" id="btn-mark">Mark</button>
-          <button class="btn" id="btn-recent">Recent</button>
-          <button class="btn danger" id="btn-clear">Clear</button>
-        </div>
-        <div id="col-right">
-          <button class="btn" id="btn-pattern"><i class="fa fa-angle-double-right"></i></button>
-        </div>
-      </div>
-      <div class="primary-row" id="row-footer">
-        <div id="col-logo">
-          <p>logo</p>
-        </div>
-        <div id="col-current-pattern">
-          <h2>Current Pattern</h2>
-          <table class="pattern" id="current-pattern" align="center" cellspacing="10px">
-            <tr>
-              <td id="pattern-r1c1"></td>
-              <td id="pattern-r1c2"></td>
-              <td id="pattern-r1c3"></td>
-              <td id="pattern-r1c4"></td>
-              <td id="pattern-r1c5"></td>
-            </tr>
-            <tr>
-              <td id="pattern-r2c1"></td>
-              <td id="pattern-r2c2"></td>
-              <td id="pattern-r2c3"></td>
-              <td id="pattern-r2c4"></td>
-              <td id="pattern-r2c5"></td>
-            </tr>
-            <tr>
-              <td id="pattern-r3c1"></td>
-              <td id="pattern-r3c2"></td>
-              <td id="pattern-r3c3 bonus"></td>
-              <td id="pattern-r3c4"></td>
-              <td id="pattern-r3c5"></td>
-            </tr>
-            <tr>
-              <td id="pattern-r4c1"></td>
-              <td id="pattern-r4c2"></td>
-              <td id="pattern-r4c3"></td>
-              <td id="pattern-r4c4"></td>
-              <td id="pattern-r4c5"></td>
-            </tr>
-            <tr>
-              <td id="pattern-r5c1"></td>
-              <td id="pattern-r5c2"></td>
-              <td id="pattern-r5c3"></td>
-              <td id="pattern-r5c4"></td>
-              <td id="pattern-r5c5"></td>
-            </tr>
-          </table>
-        </div>
-        <div id="col-current-draw">
-          <h2>Current Draw</h2>
-          <span id="current-draw-number">58</span>
-        </div>
-      </div>
+      
     </div>
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
