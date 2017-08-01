@@ -33,8 +33,21 @@ function loadBingoCells() {
 		//append number cells to current row
 		for(var cellNum = rowCellStartNum; cellNum <= rowCellStartNum + 14; cellNum++) {
 			$("#bingo-" + bingoLetter).append(
-				"<div class='bingo-cell' id='bingo-cell-b-" + cellNum + "'>" + cellNum + "</div>"
+				"<div class='bingo-cell' id='bingo-cell-" + bingoLetter + "-" + cellNum + "'>" + cellNum + "</div>"
 			);
+
+			//get the id of the current cell
+			var cellId = "bingo-cell-" + bingoLetter + "-" + cellNum;
+
+			//determine the cell state (Marked/Unmarked)
+			var cellState = localStorage.getItem(cellId);
+
+			//add a 'marked' class to cell if it is in marked state
+			if(cellState === "marked")
+				$("#" + cellId).addClass("marked");
+			else
+				//initialize the cell state to unmarked;
+				localStorage.setItem(cellId, "unmarked");
 		}
 	}
 }
