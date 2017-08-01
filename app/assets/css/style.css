@@ -70,67 +70,72 @@ label {
   min-height: 100%;
   display: flex;
   flex-direction: column; }
-  #wrapper #row-bingo {
-    flex: 4;
+  #wrapper #main {
+    flex: 1;
+    min-height: 100%;
     display: flex;
     flex-direction: column; }
-    #wrapper #row-bingo .bingo-row {
-      flex: 1;
+    #wrapper #main #row-bingo {
+      flex: 4;
+      display: flex;
+      flex-direction: column; }
+      #wrapper #main #row-bingo .bingo-row {
+        flex: 1;
+        display: flex;
+        flex-direction: row; }
+        #wrapper #main #row-bingo .bingo-row .primary-cell {
+          text-transform: uppercase;
+          background: #00c5e6;
+          color: #fff !important;
+          background: #00c5e6 !important; }
+        #wrapper #main #row-bingo .bingo-row .bingo-cell {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
+          font-weight: 800;
+          font-size: 30px;
+          border-left: 2px solid #00c5e6;
+          border-bottom: 2px solid #00c5e6;
+          color: #00c5e6;
+          transition: all 0.3s ease; }
+        #wrapper #main #row-bingo .bingo-row .bingo-cell:hover {
+          background: #006e80; }
+        #wrapper #main #row-bingo .bingo-row .bingo-cell:active {
+          background: #00424d; }
+    #wrapper #main #row-control {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 2px solid #00c5e6; }
+      #wrapper #main #row-control #col-left .inp-txt {
+        width: 20px;
+        text-align: center;
+        font-weight: 700; }
+      #wrapper #main #row-control #col-left #btn-mark {
+        margin-right: 20px; }
+    #wrapper #main #row-footer {
       display: flex;
       flex-direction: row; }
-      #wrapper #row-bingo .bingo-row .primary-cell {
-        text-transform: uppercase;
-        background: #00c5e6;
-        color: #fff !important;
-        background: #00c5e6 !important; }
-      #wrapper #row-bingo .bingo-row .bingo-cell {
+      #wrapper #main #row-footer > div {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        font-weight: 800;
-        font-size: 30px;
-        border-left: 2px solid #00c5e6;
-        border-bottom: 2px solid #00c5e6;
-        color: #00c5e6;
-        transition: all 0.3s ease; }
-      #wrapper #row-bingo .bingo-row .bingo-cell:hover {
-        background: #006e80; }
-      #wrapper #row-bingo .bingo-row .bingo-cell:active {
-        background: #00424d; }
-  #wrapper #row-control {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 2px solid #00c5e6; }
-    #wrapper #row-control #col-left .inp-txt {
-      width: 20px;
-      text-align: center;
-      font-weight: 700; }
-    #wrapper #row-control #col-left #btn-mark {
-      margin-right: 20px; }
-  #wrapper #row-footer {
-    display: flex;
-    flex-direction: row; }
-    #wrapper #row-footer > div {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      border-left: 2px solid #00c5e6; }
-    #wrapper #row-footer #col-current-pattern {
-      color: #00c5e6; }
-      #wrapper #row-footer #col-current-pattern table#current-pattern td {
-        background: #00c5e6;
-        width: 20px;
-        height: 20px;
-        border-radius: 100%; }
-    #wrapper #row-footer #col-current-draw {
-      color: #00c5e6; }
-      #wrapper #row-footer #col-current-draw #current-draw-number {
-        font-weight: 800;
-        font-size: 100px; }
+        border-left: 2px solid #00c5e6; }
+      #wrapper #main #row-footer #col-current-pattern {
+        color: #00c5e6; }
+        #wrapper #main #row-footer #col-current-pattern table#current-pattern td {
+          background: #00c5e6;
+          width: 20px;
+          height: 20px;
+          border-radius: 100%; }
+      #wrapper #main #row-footer #col-current-draw {
+        color: #00c5e6; }
+        #wrapper #main #row-footer #col-current-draw #current-draw-number {
+          font-weight: 800;
+          font-size: 100px; }
 
 /*# sourceMappingURL=style.css.map */
