@@ -2,6 +2,7 @@
 
 $primary-color: #00c5e6;
 $danger-color: crimson;
+$success-color: #24f194;
 $cell-base-border: 2px solid $primary-color;
 $cell-marked-bg: darken($primary-color, 20%);
 $base-transition: all .3s ease;
@@ -60,8 +61,19 @@ label {
 	background: $danger-color;
 	color: #fff;
 }
-.btn.danger:active {
-	background: darken($danger-color, 10%);
+.btn.success:active {
+	background: darken($success-color, 10%);
+}
+.btn.success {
+	border-color: $success-color;
+	color: $success-color;
+}
+.btn.success:hover {
+	background: $success-color;
+	color: #fff;
+}
+.btn.success:active {
+	background: darken($success-color, 10%);
 }
 
 #wrapper {
@@ -198,6 +210,28 @@ label {
 		background: $primary-color;
 	}
 
+	table.pattern {
+		td {
+			width: 50px;
+			height: 50px;
+			background: $primary-color;
+			border-radius: 100%;
+			transition: $base-transition;
+		}
+		td.marked {
+			background: $primary-color;
+		}
+		td.unmarked {
+			background: lighten(gray, 30%);
+		}
+		td:hover {
+			background: lighten(gray, 40%);
+		}
+		td:active {
+			background: lighten(gray, 20%);
+		}
+	}
+
 	#patterns {
 		flex: 1;
 
@@ -215,15 +249,6 @@ label {
 			flex-direction: column;
 			justify-content: center;
 
-			table.pattern {
-				td {
-					width: 50px;
-					height: 50px;
-					background: $primary-color;
-					border-radius: 100%;
-				}
-			}
-
 			.pattern-name {
 				color: $primary-color;
 				font-weight: 800;
@@ -237,5 +262,25 @@ label {
 				margin: 0 auto;
 			}
 		}
+	}
+
+	#pattern-add {
+		flex: 1;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		> div {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+
+			input {
+				margin-right: 5px;
+			}
+		}
+
+		
 	}
 }
