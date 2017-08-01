@@ -40,7 +40,7 @@
 			"file": "app/assets/css/style.css",
 			"settings":
 			{
-				"buffer_size": 3283,
+				"buffer_size": 3410,
 				"line_ending": "Windows"
 			}
 		},
@@ -75,7 +75,7 @@
 			"file": "app/assets/sass/_fonts.scss",
 			"settings":
 			{
-				"buffer_size": 264,
+				"buffer_size": 388,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -88,8 +88,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 229.0,
-		"last_filter": "install p",
+		"height": 47.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -121,7 +121,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 414.0
+		"width": 382.0
 	},
 	"console":
 	{
@@ -192,7 +192,7 @@
 	],
 	"find":
 	{
-		"height": 70.0
+		"height": 25.0
 	},
 	"find_in_files":
 	{
@@ -253,10 +253,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 380.0,
+						"translation.y": 260.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -271,15 +271,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3283,
+						"buffer_size": 3410,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								982,
-								982
+								0,
+								0
 							]
 						],
 						"settings":
@@ -326,7 +326,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -342,8 +342,8 @@
 						"selection":
 						[
 							[
-								796,
-								796
+								403,
+								403
 							]
 						],
 						"settings":
@@ -353,10 +353,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 171.0,
+						"translation.y": 111.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -378,8 +378,8 @@
 						"selection":
 						[
 							[
-								1470,
-								1470
+								1585,
+								1585
 							]
 						],
 						"settings":
@@ -388,10 +388,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1512.0,
+						"translation.y": 1317.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -400,26 +400,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 264,
+						"buffer_size": 388,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								97,
-								97
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -427,7 +428,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 25.0
 	},
 	"input":
 	{
@@ -484,7 +485,7 @@
 	"project": "_sublime_project.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -514,7 +515,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 2,
 	"settings":
 	{
 	},
