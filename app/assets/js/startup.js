@@ -72,9 +72,14 @@ function loadPatterns() {
 			);
 
 			for(var col = 1; col <= 5; col++) {
-				$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
-					"<td id='pattern-r" + row + "c" + col + "'></td>"
-				);
+				if(row == 3 && col == 3)
+					$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
+						"<td class='bonus' id='pattern-r" + row + "c" + col + "'></td>"
+					);
+				else
+					$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
+						"<td id='pattern-r" + row + "c" + col + "'></td>"
+					);
 			}
 		}
 

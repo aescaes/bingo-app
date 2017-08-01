@@ -249,18 +249,17 @@ label {
 		flex: 1;
 
 		display: none;
-		flex-direction: row;
-
-		@media screen and(max-width: 770px) {
-			flex-direction: column;
-		}
+		flex-wrap: wrap;
 
 		> div {
-			flex: 1;
+			flex-basis: 50%;
 
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			margin-top: 70px;
+			position: relative;
+			top: -35px;
 
 			.pattern {
 				pointer-events: none;

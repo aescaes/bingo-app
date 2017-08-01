@@ -190,15 +190,15 @@ label {
   #wrapper #patterns {
     flex: 1;
     display: none;
-    flex-direction: row; }
-    @media screen and (max-width: 770px) {
-      #wrapper #patterns {
-        flex-direction: column; } }
+    flex-wrap: wrap; }
     #wrapper #patterns > div {
-      flex: 1;
+      flex-basis: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: center; }
+      justify-content: center;
+      margin-top: 70px;
+      position: relative;
+      top: -35px; }
       #wrapper #patterns > div .pattern {
         pointer-events: none; }
       #wrapper #patterns > div .pattern-name {
