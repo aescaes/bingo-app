@@ -187,9 +187,9 @@ label {
 		}
 	}
 
-	#btn-add {
+	.btn-float {
+		display: none;
 		position: absolute;
-		right: 0;
 		bottom: 0;
 		margin: 30px;
 		width: 50px;
@@ -201,13 +201,20 @@ label {
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 		transition: $base-transition;
 	}
-	#btn-add:hover {
+	.btn-float:hover {
 		bottom: 5px;
 		background: lighten($primary-color, 10%);
 	}
-	#btn-add:active {
+	.btn-float:active {
 		bottom: 3px;
 		background: $primary-color;
+	}
+
+	#btn-add {
+		right: 0;
+	}
+	#btn-back {
+		left: 0;
 	}
 
 	table.pattern {
@@ -235,7 +242,7 @@ label {
 	#patterns {
 		flex: 1;
 
-		display: flex;
+		display: none;
 		flex-direction: row;
 
 		@media screen and(max-width: 425px) {
@@ -267,7 +274,7 @@ label {
 	#pattern-add {
 		flex: 1;
 
-		display: flex;
+		display: none;
 		flex-direction: column;
 		justify-content: center;
 

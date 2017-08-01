@@ -148,9 +148,9 @@ label {
         #wrapper #main #row-footer #col-current-draw #current-draw-number {
           font-weight: 800;
           font-size: 100px; }
-  #wrapper #btn-add {
+  #wrapper .btn-float {
+    display: none;
     position: absolute;
-    right: 0;
     bottom: 0;
     margin: 30px;
     width: 50px;
@@ -161,12 +161,16 @@ label {
     color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease; }
-  #wrapper #btn-add:hover {
+  #wrapper .btn-float:hover {
     bottom: 5px;
     background: #1adeff; }
-  #wrapper #btn-add:active {
+  #wrapper .btn-float:active {
     bottom: 3px;
     background: #00c5e6; }
+  #wrapper #btn-add {
+    right: 0; }
+  #wrapper #btn-back {
+    left: 0; }
   #wrapper table.pattern td {
     width: 50px;
     height: 50px;
@@ -183,7 +187,7 @@ label {
     background: #b3b3b3; }
   #wrapper #patterns {
     flex: 1;
-    display: flex;
+    display: none;
     flex-direction: row; }
     @media screen and (max-width: 425px) {
       #wrapper #patterns {
@@ -204,7 +208,7 @@ label {
         margin: 0 auto; }
   #wrapper #pattern-add {
     flex: 1;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center; }
     #wrapper #pattern-add > div {

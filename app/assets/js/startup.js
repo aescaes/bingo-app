@@ -1,5 +1,7 @@
-$(document).ready(function() {
-	//append the 5 bingo rows (b, i, n, g, o)
+/*
+ * Appends the 5 bingo rows (b, i, n, g, o)
+ */
+function loadBingoCells() {
 	for(var c = 1; c <= 5; c++) {
 		var bingoLetter = '';
 
@@ -35,4 +37,4 @@ $(document).ready(function() {
 			);
 		}
 	}
-});
+}
