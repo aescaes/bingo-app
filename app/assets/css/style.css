@@ -170,8 +170,6 @@ label {
   #wrapper .btn-float:active {
     bottom: 3px;
     background: #00c5e6; }
-  #wrapper #btn-add {
-    right: 0; }
   #wrapper #btn-back {
     left: 0; }
   #wrapper table.pattern td {
@@ -209,19 +207,19 @@ label {
         text-transform: uppercase;
         text-align: center;
         letter-spacing: 5px; }
-      #wrapper #patterns > div #btn-delete-pattern {
+      #wrapper #patterns > div #btn-edit {
         width: 100px;
         margin: 0 auto; }
-  #wrapper #pattern-add {
+  #wrapper #pattern-edit {
     flex: 1;
     display: none;
     flex-direction: column;
     justify-content: center; }
-    #wrapper #pattern-add > div {
+    #wrapper #pattern-edit > div {
       display: flex;
       flex-direction: row;
       justify-content: center; }
-      #wrapper #pattern-add > div input {
+      #wrapper #pattern-edit > div input {
         margin-right: 5px; }
 
 /*# sourceMappingURL=style.css.map */
