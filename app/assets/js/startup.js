@@ -74,17 +74,29 @@ function loadPatterns() {
 			for(var col = 1; col <= 5; col++) {
 				if(row == 3 && col == 3)
 					$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
-						"<td class='bonus' id='pattern-r" + row + "c" + col + "'></td>"
+						"<td class='bonus' id='pattern-" + patternNum + "-r" + row + "c" + col + "'></td>"
 					);
-				else
+				else {
+					var cellId = "pattern-" + patternNum + "-r" + row + "c" + col;
+					var cellStatus = localStorage.getItem(cellId);
+
 					$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
-						"<td id='pattern-r" + row + "c" + col + "'></td>"
+						"<td id='" + cellId + "'></td>"
 					);
+
+					if(cellStatus === "marked")
+						$("#patterns #" + cellId).addClass("marked");
+				}
 			}
 		}
 
+		var patternName = localStorage.getItem("pattern-" + patternNum);
+
+		if(typeof(patternName) === "object")
+			patternName = "Slot " + patternNum;
+
 		$("#patterns #pattern-block-" + patternNum).append(
-			"<h1 class='pattern-name' id='pattern-" + patternNum + "-name'>Slot " + patternNum + "</h1>" +
+			"<h1 class='pattern-name' id='pattern-" + patternNum + "-name'>" + patternName + "</h1>" +
 			"<button class='btn' id='btn-edit' data-pattern-num='pattern-" + patternNum + "'>Edit</button>"
 		);
 	}

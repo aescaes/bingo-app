@@ -20,6 +20,9 @@ $(document).ready(function() {
 				else
 					$(".btn-float").show();
 
+				if(currentPage === "pattern-edit")
+					$("#pattern-edit table#edit-pattern").remove();
+
 				$("#" + redirectPage).fadeIn("slow");
 			});	
 		}
@@ -31,6 +34,12 @@ $(document).ready(function() {
 
 		//transition from patterns to edit-pattern page
 		$("#patterns #btn-edit").click(function() {
+			var patternNum = $(this).data("pattern-num");
+
+			$("#edit-pattern").data("pattern-num", patternNum);
+
+			editPattern(patternNum);
+
 			transitionPage("patterns", "pattern-edit");
 		});
 
@@ -40,127 +49,172 @@ $(document).ready(function() {
 
 			if(btnBackId === "patterns-page")
 				transitionPage("patterns", "main");
-			else if(btnBackId === "pattern-edit-page")
+			else if(btnBackId === "pattern-edit-page") {
 				transitionPage("pattern-edit", "patterns");
+			}
 		});
 		/****Page Transition (end)****/
 
 
 
 
-	/****Bingo Cells (start)****/
-	/*
-	 * Updates cell state (Marked/Unmarked)
-	 */
-	function updateCell(cellId) {
-	 	// get the current state of the cell
-	 	var cellState = localStorage.getItem(cellId);
+		/****Bingo Cells (start)****/
+		/*
+		 * Updates cell state (Marked/Unmarked)
+		 */
+		function updateCell(cellId, option) {
+		 	// get the current state of the cell
+		 	var cellState = localStorage.getItem(cellId);
 
-	 	if(cellState === "marked") {
-	 		localStorage.setItem(cellId, "unmarked");
-	 		$("#" + cellId).removeClass("marked");
-	 	} else {
-	 		localStorage.setItem(cellId, "marked");
-	 		$("#" + cellId).addClass("marked");
-	 	}
-	 }
+		 	if(cellState === "marked") {
+		 		localStorage.setItem(cellId, "unmarked");
+		 		$("#" + cellId).removeClass("marked");
 
-	 /*
-	  * Reset Bingo cell states to unmarked
-	  */
-	function clearBingo() {
-	  	var bingoCellCount = $(".bingo-cell").length;
-	  	var letter; //for getting the current letter
-	  	var cellId;
+		 		if(option === "edit")
+		 			$("#edit-pattern #" + cellId).removeClass("marked");
+		 	} else {
+		 		localStorage.setItem(cellId, "marked");
+		 		$("#" + cellId).addClass("marked");
 
-	  	//remove each item
-	  	for(var num = 1; num <= (bingoCellCount - 5); num++) { // where 5 is for b, i, n, g, o
-	  		//determine the letter
-	  		if(num >= 1 && num <= 15)
-	  			letter = 'b';
-	  		else if(num >= 16 && num <= 30)
-	  			letter = 'i';
-	  		else if(num >= 31 && num <= 45)
-	  			letter = 'n';
-	  		else if(num >= 46 && num <= 60)
-	  			letter = 'g';
-	  		else if(num >= 61 && num <= 75)
-	  			letter = 'o';
+		 		if(option === "edit")
+		 			$("#edit-pattern #" + cellId).addClass("marked");
+		 	}
+		 }
 
-	  		//get the cell id
-	  		cellId = "bingo-cell-" + letter + "-" + num;
+		 /*
+		  * Reset Bingo cell states to unmarked
+		  */
+		function clearBingo() {
+		  	var bingoCellCount = $(".bingo-cell").length;
+		  	var letter; //for getting the current letter
+		  	var cellId;
 
-	  		//unmark cell by removing the 'marked' class
-	  		$("#" + cellId).removeClass("marked");
-	  		localStorage.setItem(cellId, "unmarked");
-	  	}
-	  }
+		  	//remove each item
+		  	for(var num = 1; num <= (bingoCellCount - 5); num++) { // where 5 is for b, i, n, g, o
+		  		//determine the letter
+		  		if(num >= 1 && num <= 15)
+		  			letter = 'b';
+		  		else if(num >= 16 && num <= 30)
+		  			letter = 'i';
+		  		else if(num >= 31 && num <= 45)
+		  			letter = 'n';
+		  		else if(num >= 46 && num <= 60)
+		  			letter = 'g';
+		  		else if(num >= 61 && num <= 75)
+		  			letter = 'o';
 
-	 //mark a cell by click
-	 $(".bingo-cell").click(function() {
-	 	// get the bingo cell id
-	 	var cellId = $(this).attr("id");
+		  		//get the cell id
+		  		cellId = "bingo-cell-" + letter + "-" + num;
 
-	 	//update cell
-	 	updateCell(cellId);
-	 });
+		  		//unmark cell by removing the 'marked' class
+		  		$("#" + cellId).removeClass("marked");
+		  		localStorage.setItem(cellId, "unmarked");
+		  	}
+		  }
 
-	 //mark a cell by input
-	 $("#inp-num-search").keypress(function(e) {
-	 	var key = e.which;
+		 //mark a cell by click
+		 $(".bingo-cell").click(function() {
+		 	// get the bingo cell id
+		 	var cellId = $(this).attr("id");
 
-	 	if(key == 13) {
-	 		var searchInput = $("#inp-num-search").val();
+		 	//update cell
+		 	updateCell(cellId);
+		 });
 
-	 		if(searchInput.length > 0) {
-			 	var cellLetter = searchInput[0];
+		 //mark a cell by input
+		 $("#inp-num-search").keypress(function(e) {
+		 	var key = e.which;
 
-			 	var cellNumber;
-			 	if(searchInput.length == 2)
-				 	cellNumber = searchInput[1];
-				else
-					cellNumber = searchInput[1] + searchInput[2];
+		 	if(key == 13) {
+		 		var searchInput = $("#inp-num-search").val();
 
-			 	var cellId = "bingo-cell-" + cellLetter + "-" + cellNumber;
+		 		if(searchInput.length > 0) {
+				 	var cellLetter = searchInput[0];
 
-			 	updateCell(cellId);
+				 	var cellNumber;
+				 	if(searchInput.length == 2)
+					 	cellNumber = searchInput[1];
+					else
+						cellNumber = searchInput[1] + searchInput[2];
 
-			 	$(this).val("");
+				 	var cellId = "bingo-cell-" + cellLetter + "-" + cellNumber;
 
-	 		}
+				 	updateCell(cellId);
+
+				 	$(this).val("");
+
+		 		}
+			}
+		 });
+
+		 //reset bingo
+		 $("#btn-reset").click(function() {
+		 	var pass = prompt("Enter the password to reset.\nPassword:");
+
+		 	if(pass === password)
+		 		clearBingo();
+		 	else
+		 		alert("Did not match.");
+		 });
+		/****Bingo Cells (end)****/
+
+
+
+
+		/****Edit Pattern (start)****/
+		function savePattern(name, patternNum) {
+			var pass = prompt("Enter the password to save.\nPassword:");
+
+			if(pass !== password)
+				alert("Did not match.");
+			else {
+
+			}
 		}
-	 });
 
-	 //reset bingo
-	 $("#btn-reset").click(function() {
-	 	var pass = prompt("Enter the password to reset.\nPassword:");
+		function editPattern(patternNum) {
+			$("#pattern-edit").append(
+				"<table class='pattern' id='edit-pattern' align='center' cellspacing='10px'>" +
+				"</table>"
+			);
 
-	 	if(pass === password)
-	 		clearBingo();
-	 	else
-	 		alert("Did not match.");
-	 });
-	/****Bingo Cells (end)****/
+			$("#inp-pattern-name").val(localStorage.getItem(patternNum));
 
+			for(var row = 1; row <= 5; row++) {
+				$("#pattern-edit table#edit-pattern").append(
+					"<tr id='r" + row + "'></tr>"
+				);
 
+				for(var col = 1; col <= 5; col++) {
+					if(row == 3 && col == 3)
+						$("#pattern-edit table#edit-pattern tr#r" + row).append(
+							"<td class='bonus' id='pattern-" + patternNum + "-r" + row + "c" + col + "'></td>"
+						);
+					else {
+						var cellId = "pattern-" + patternNum[patternNum.length - 1] + "-r" + row + "c" + col;
+						var cellStatus = localStorage.getItem(cellId);
 
+						$("#pattern-edit table#edit-pattern tr#r" + row).append(
+							"<td id='" + cellId + "'></td>"
+						);
 
-	/****Edit Pattern (start)****/
-	function savePattern(name, patternNum) {
-		var pass = prompt("Enter the password to save.\nPassword:");
+						if(cellStatus === "marked")
+							$("#edit-pattern #" + cellId).addClass("marked");
+					}
+				}
+			}
+			$("#edit-pattern td").click(function() {
+				var cellId = $(this).attr("id");
 
-		if(pass !== password)
-			alert("Did not match.");
-		else {
+				updateCell(cellId, "edit");
+			});
 
+			$("#btn-save").click(function() {
+				localStorage.setItem(patternNum, $("#inp-pattern-name").val());
+				$("#patterns #pattern-block-" + patternNum[patternNum.length - 1] + " h1").html(localStorage.getItem(patternNum));
+				transitionPage("pattern-edit", "patterns");
+			});
 		}
-	}
-
-	$("#new-pattern tr td").click(function() {
-		var cellId = $(this).attr("id");
-
-		updateCell(cellId);
-	});
-	/****Edit Pattern (end)****/
+		/****Edit Pattern (end)****/
 	}	/****Storage check (end)****/
 });
