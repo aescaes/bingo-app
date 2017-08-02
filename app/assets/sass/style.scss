@@ -204,6 +204,7 @@ label {
 				#current-draw-number {
 					font-weight: 800;
 					font-size: 150px;
+					text-transform: uppercase;
 				}
 			}
 		}
@@ -317,7 +318,21 @@ label {
 			width: 100px;
 			height: 100px;
 		}
+	}
 
-		
+	#current-draw {
+		flex: 1;
+
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+
+		#number {
+			font-weight: 800;
+			font-size: 20em;
+			text-align: center;
+			text-transform: uppercase;
+			color: $primary-color;
+		}
 	}
 }

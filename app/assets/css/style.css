@@ -162,7 +162,8 @@ label {
         color: #00c5e6; }
         #wrapper #main #row-footer #col-current-draw #current-draw-number {
           font-weight: 800;
-          font-size: 150px; }
+          font-size: 150px;
+          text-transform: uppercase; }
   #wrapper .btn-float {
     display: none;
     position: fixed;
@@ -238,5 +239,16 @@ label {
     #wrapper #pattern-edit td {
       width: 100px;
       height: 100px; }
+  #wrapper #current-draw {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center; }
+    #wrapper #current-draw #number {
+      font-weight: 800;
+      font-size: 20em;
+      text-align: center;
+      text-transform: uppercase;
+      color: #00c5e6; }
 
 /*# sourceMappingURL=style.css.map */

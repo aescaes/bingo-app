@@ -6,6 +6,9 @@ $(document).ready(function() {
 		var password = "1234";
 		loadBingoCells();
 		loadPatterns();
+
+		localStorage.setItem("previous-draw", "null");
+		localStorage.setItem("previous-before-previous-draw", "null*");
 		
 		/****Page Transition (start)****/
 		/*
@@ -112,13 +115,65 @@ $(document).ready(function() {
 		  	}
 		  }
 
+		  function updateDraw(cellId) {
+		  	if($("#" + cellId).attr("class") !== "bingo-cell marked") {
+		 		$("#main #current-draw-number").html(localStorage.getItem("previous-draw"));
+		  	} else {
+		  		if(localStorage.getItem("null-previous-before-previous-draw") === "yes")
+		  			localStorage.setItem("previous-before-previous-draw", "null*");
+
+		 		var cellLetter = $("#" + cellId).parent().closest("div").attr("id");
+		 		cellLetter = cellLetter[cellLetter.length - 1];
+
+		 		var currentDraw = cellLetter + "-" + $("#" + cellId).html();
+
+		 		$("#current-draw #number").html(currentDraw);
+		 		transitionPage("main", "current-draw");
+
+		 		setTimeout(function() {
+			 		transitionPage("current-draw", "main");
+			 		$("#main #current-draw-number").html(currentDraw);
+			 	}, 1000);
+		 	}
+		  }
+
+		  function draw(cellId) {
+		  	if($("#" + cellId).attr("style") !== "pointer-events: none") {
+		  		if($("#" + cellId).attr("class") !== "bingo-cell marked") {
+			 		var previousDrawId = localStorage.getItem("previous-draw-id");
+
+			 		if($("#" + previousDrawId).attr("class") === "bingo-cell marked")
+			  			$("#" + previousDrawId).attr("style", "pointer-events: none");
+
+			 		localStorage.setItem("previous-draw-id", cellId);
+
+			 		var previousDraw = localStorage.getItem("previous-draw");
+	 				var previousBeforePreviousDraw = localStorage.getItem("previous-before-previous-draw");
+
+	 				if(previousBeforePreviousDraw === previousDraw) {
+	 					localStorage.setItem("previous-draw", previousDraw);
+	 					localStorage.setItem("null-previous-before-previous-draw", "yes");
+	 				} else {
+		 				localStorage.setItem("previous-draw", $("#current-draw #number").html());
+		 				localStorage.setItem("null-previous-before-previous-draw", "no");
+	 				}
+			 	} else {
+			 		var previousDraw = localStorage.getItem("previous-draw");
+			 		var previousBeforePreviousDraw = localStorage.getItem("previous-before-previous-draw");
+					
+					localStorage.setItem("previous-before-previous-draw", previousDraw);
+			 	}
+
+			 	updateCell(cellId);
+			 	updateDraw(cellId, previousBeforePreviousDraw, previousDraw);
+			 }
+		  } 
+
 		 //mark a cell by click
-		 $(".bingo-cell").click(function() {
+		 $(".bingo-cell").click(function(e) {
 		 	// get the bingo cell id
 		 	var cellId = $(this).attr("id");
-
-		 	//update cell
-		 	updateCell(cellId);
+		 	draw(cellId);
 		 });
 
 		 //mark a cell by input
@@ -139,10 +194,9 @@ $(document).ready(function() {
 
 				 	var cellId = "bingo-cell-" + cellLetter + "-" + cellNumber;
 
-				 	updateCell(cellId);
+				 	draw(cellId);
 
 				 	$(this).val("");
-
 		 		}
 			}
 		 });
@@ -233,7 +287,7 @@ $(document).ready(function() {
 			nextLogo = "col";
 		});
 
-		
+
 		setInterval(function() {
 			if(nextLogo === "codec") {
 				$("#logo-col").fadeOut(3000, function() {
