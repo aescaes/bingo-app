@@ -34,6 +34,9 @@ label {
 .inp-txt:hover, .inp-txt:focus {
 	box-shadow: 0 0 5px $primary-color;
 }
+.inp-txt::placeholder {
+	color: lighten($primary-color, 20%);
+}
 .btn {
 	border-radius: 50px;
 	border: 1px solid $primary-color;
@@ -266,12 +269,13 @@ label {
 				pointer-events: none;
 			}
 
-			.pattern-name {
+			h1, h2, h3 {
 				color: $primary-color;
 				font-weight: 800;
 				text-transform: uppercase;
 				text-align: center;
 				letter-spacing: 5px;
+				margin: 0;
 			}
 
 			#btn-edit {

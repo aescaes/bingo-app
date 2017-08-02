@@ -36,6 +36,9 @@ label {
 .inp-txt:hover, .inp-txt:focus {
   box-shadow: 0 0 5px #00c5e6; }
 
+.inp-txt::placeholder {
+  color: #4de5ff; }
+
 .btn {
   border-radius: 50px;
   border: 1px solid #00c5e6;
@@ -202,12 +205,13 @@ label {
       top: -35px; }
       #wrapper #patterns > div .pattern {
         pointer-events: none; }
-      #wrapper #patterns > div .pattern-name {
+      #wrapper #patterns > div h1, #wrapper #patterns > div h2, #wrapper #patterns > div h3 {
         color: #00c5e6;
         font-weight: 800;
         text-transform: uppercase;
         text-align: center;
-        letter-spacing: 5px; }
+        letter-spacing: 5px;
+        margin: 0; }
       #wrapper #patterns > div #btn-edit {
         width: 100px;
         margin: 0 auto; }

@@ -179,6 +179,7 @@ $(document).ready(function() {
 			);
 
 			$("#inp-pattern-name").val(localStorage.getItem(patternNum));
+			$("#inp-pattern-price").val(localStorage.getItem(patternNum + "-price"));
 
 			for(var row = 1; row <= 5; row++) {
 				$("#pattern-edit table#edit-pattern").append(
@@ -211,7 +212,11 @@ $(document).ready(function() {
 
 			$("#btn-save").click(function() {
 				localStorage.setItem(patternNum, $("#inp-pattern-name").val());
+				localStorage.setItem(patternNum + "-price", $("#inp-pattern-price").val());
+
 				$("#patterns #pattern-block-" + patternNum[patternNum.length - 1] + " h1").html(localStorage.getItem(patternNum));
+				transitionPage("pattern-edit", "patterns");
+				$("#patterns #pattern-block-" + patternNum[patternNum.length - 1] + " h2").html("Price: P" + localStorage.getItem(patternNum + "-price") + ".00");
 				transitionPage("pattern-edit", "patterns");
 			});
 		}

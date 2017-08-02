@@ -91,12 +91,17 @@ function loadPatterns() {
 		}
 
 		var patternName = localStorage.getItem("pattern-" + patternNum);
+		var patternPrice = localStorage.getItem("pattern-" + patternNum + "-price");
 
 		if(typeof(patternName) === "object")
 			patternName = "Slot " + patternNum;
+		if(typeof(patternPrice) === "object")
+			patternPrice = "0";
 
 		$("#patterns #pattern-block-" + patternNum).append(
+			"<h3>Game " + patternNum +"</h3>" +
 			"<h1 class='pattern-name' id='pattern-" + patternNum + "-name'>" + patternName + "</h1>" +
+			"<h2 id='pattern-" + patternNum + "-price'>Price: P" + patternPrice + ".00</h2>" +
 			"<button class='btn' id='btn-edit' data-pattern-num='pattern-" + patternNum + "'>Edit</button>"
 		);
 	}
