@@ -39,8 +39,6 @@ $(document).ready(function() {
 		$("#patterns #btn-edit").click(function() {
 			var patternNum = $(this).data("pattern-num");
 
-			$("#edit-pattern").data("pattern-num", patternNum);
-
 			editPattern(patternNum);
 
 			transitionPage("patterns", "pattern-edit");
@@ -228,7 +226,7 @@ $(document).ready(function() {
 
 		function editPattern(patternNum) {
 			$("#pattern-edit").append(
-				"<table class='pattern' id='edit-pattern' align='center' cellspacing='10px'>" +
+				"<table class='pattern' id='edit-pattern' data-pattern-num='" + patternNum + "' align='center' cellspacing='10px'>" +
 				"</table>"
 			);
 
@@ -264,14 +262,14 @@ $(document).ready(function() {
 				updateCell(cellId, "edit");
 			});
 
-			$("#btn-save").click(function() {
+			$("#pattern-edit div input").keyup(function() {
+				var patternNum = $("#pattern-edit #edit-pattern").data("pattern-num");
+
 				localStorage.setItem(patternNum, $("#inp-pattern-name").val());
 				localStorage.setItem(patternNum + "-price", $("#inp-pattern-price").val());
 
-				$("#patterns #pattern-block-" + patternNum[patternNum.length - 1] + " h1").html(localStorage.getItem(patternNum));
-				transitionPage("pattern-edit", "patterns");
-				$("#patterns #pattern-block-" + patternNum[patternNum.length - 1] + " h2").html("Price: P" + localStorage.getItem(patternNum + "-price") + ".00");
-				transitionPage("pattern-edit", "patterns");
+				$("#patterns div #" + patternNum + "-name").html(localStorage.getItem(patternNum));
+				$("#patterns div #" + patternNum + "-price").html("Price: P" + localStorage.getItem(patternNum + "-price") + ".00");
 			});
 		}
 		/****Edit Pattern (end)****/
