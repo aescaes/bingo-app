@@ -221,5 +221,33 @@ $(document).ready(function() {
 			});
 		}
 		/****Edit Pattern (end)****/
+
+
+
+
+		/****Logo Transition (start)****/
+
+		var nextLogo = "codec";
+		$("#logo-col").fadeOut(3000, function() {
+			$("#logo-codec").fadeIn(3000);
+			nextLogo = "col";
+		});
+
+		
+		setInterval(function() {
+			if(nextLogo === "codec") {
+				$("#logo-col").fadeOut(3000, function() {
+					$("#logo-codec").fadeIn(3000);
+					nextLogo = "col";
+				});
+			} else if(nextLogo === "col") {
+				$("#logo-codec").fadeOut(3000, function() {
+					$("#logo-col").fadeIn(3000);
+					nextLogo = "codec";
+				});
+			}
+		}, 5000);
+		
+		/****Logo Transition (end)****/
 	}	/****Storage check (end)****/
 });

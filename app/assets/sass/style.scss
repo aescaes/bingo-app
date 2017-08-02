@@ -178,6 +178,16 @@ label {
 				border-left: $cell-base-border;
 			}
 
+			#col-logo {
+				img {
+					display: none;
+					margin: 0 auto;
+					margin-top: 60px;
+					max-width: 200px;
+					max-height: 200px;
+				}
+			}
+
 			#col-current-pattern {
 				color: $primary-color;
 
