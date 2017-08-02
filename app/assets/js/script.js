@@ -256,6 +256,7 @@ $(document).ready(function() {
 					}
 				}
 			}
+
 			$("#edit-pattern td").click(function() {
 				var cellId = $(this).attr("id");
 
@@ -273,6 +274,50 @@ $(document).ready(function() {
 			});
 		}
 		/****Edit Pattern (end)****/
+
+
+
+
+		/****Select Pattern (start)****/
+		function selectPattern(patternNum) {
+			$("#current-pattern").remove();
+			$("#col-current-pattern").append(
+				"<table class='pattern' id='current-pattern' data-pattern-num='" + patternNum + "' align='center' cellspacing='10px'>" +
+				"</table>"
+			);
+
+			for(var row = 1; row <= 5; row++) {
+				$("#current-pattern").append(
+					"<tr id='r" + row + "'></tr>"
+				);
+
+				for(var col = 1; col <= 5; col++) {
+					if(row == 3 && col == 3)
+						$("#current-pattern #r" + row).append(
+							"<td class='bonus' id='" + patternNum + "-r" + row + "c" + col + "'></td>"
+						);
+					else {
+						var cellId = patternNum + "-r" + row + "c" + col;
+						var cellStatus = localStorage.getItem(cellId);
+
+						$("#current-pattern #r" + row).append(
+							"<td id='" + cellId + "'></td>"
+						);
+
+						if(cellStatus === "marked")
+							$("#" + cellId).addClass("marked");
+					}
+				}
+			}
+
+			transitionPage("patterns", "main");
+		}
+
+		$("#patterns #btn-select").click(function() {
+			var patternNum = $(this).data("pattern-num");
+			selectPattern(patternNum);
+		});
+		/****Select Pattern (end)****/
 
 
 

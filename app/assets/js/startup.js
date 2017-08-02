@@ -102,7 +102,8 @@ function loadPatterns() {
 			"<h3>Game " + patternNum +"</h3>" +
 			"<h1 class='pattern-name' id='pattern-" + patternNum + "-name'>" + patternName + "</h1>" +
 			"<h2 id='pattern-" + patternNum + "-price'>Price: P" + patternPrice + ".00</h2>" +
-			"<button class='btn' id='btn-edit' data-pattern-num='pattern-" + patternNum + "'>Edit</button>"
+			"<div id='btns'><button class='btn' id='btn-edit' data-pattern-num='pattern-" + patternNum + "'>Edit</button>" +
+			"<button class='btn' id='btn-select' data-pattern-num='pattern-" + patternNum + "'>Select</button></div>"
 		);
 	}
 }
