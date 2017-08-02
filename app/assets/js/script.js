@@ -71,14 +71,18 @@ $(document).ready(function() {
 		 		localStorage.setItem(cellId, "unmarked");
 		 		$("#" + cellId).removeClass("marked");
 
-		 		if(option === "edit")
+		 		if(option === "edit") {
 		 			$("#edit-pattern #" + cellId).removeClass("marked");
+		 			$("#patterns #" + cellId).removeClass("marked");
+		 		}
 		 	} else {
 		 		localStorage.setItem(cellId, "marked");
 		 		$("#" + cellId).addClass("marked");
 
-		 		if(option === "edit")
+		 		if(option === "edit") {
 		 			$("#edit-pattern #" + cellId).addClass("marked");
+		 			$("#patterns #" + cellId).addClass("marked");
+		 		}
 		 	}
 		 }
 
