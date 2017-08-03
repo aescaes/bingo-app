@@ -15,6 +15,7 @@
   outline: 0; }
 
 html, body {
+  cursor: default;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -92,7 +93,7 @@ label {
     display: flex;
     flex-direction: column; }
     #wrapper #main #row-bingo {
-      flex: 4;
+      flex: 5;
       display: flex;
       flex-direction: column; }
       #wrapper #main #row-bingo .bingo-row {
@@ -109,6 +110,7 @@ label {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          cursor: pointer;
           text-align: center;
           font-weight: 800;
           font-size: 50px;
@@ -137,6 +139,7 @@ label {
         width: 37px;
         height: 37px; }
     #wrapper #main #row-footer {
+      flex: 1;
       display: flex;
       flex-direction: row; }
       #wrapper #main #row-footer > div {
@@ -242,6 +245,7 @@ label {
       #wrapper #pattern-edit > div input {
         margin-right: 5px; }
     #wrapper #pattern-edit td {
+      cursor: pointer;
       width: 100px;
       height: 100px; }
   #wrapper #current-draw {

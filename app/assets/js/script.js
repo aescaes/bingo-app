@@ -134,10 +134,11 @@ $(document).ready(function() {
 		 		$("#current-draw #number").html(currentDraw);
 		 		transitionPage("main", "current-draw");
 
+
 		 		setTimeout(function() {
 			 		transitionPage("current-draw", "main");
 			 		$("#main #current-draw-number").html(currentDraw);
-			 	}, 1000);
+			 	}, 10000);
 		 	}
 		  }
 
@@ -187,32 +188,31 @@ $(document).ready(function() {
 		 	if(key == 13) {
 		 		var searchInput = $("#inp-num-search").val();
 
-		 		if(searchInput.length > 0) {
-				 	var cellLetter = searchInput[0];
+		 		if(searchInput === "0000") {
+		 			var pass = prompt("Enter the password to reset.\nPassword:");
 
-				 	var cellNumber;
-				 	if(searchInput.length == 2)
-					 	cellNumber = searchInput[1];
-					else
-						cellNumber = searchInput[1] + searchInput[2];
+				 	if(pass === password)
+				 		clearBingo();
+				 	else
+				 		alert("Did not match.");
+		 		} else {
+			 		if(searchInput.length > 0) {
+					 	var cellLetter = searchInput[0];
 
-				 	var cellId = "bingo-cell-" + cellLetter + "-" + cellNumber;
+					 	var cellNumber;
+					 	if(searchInput.length == 2)
+						 	cellNumber = searchInput[1];
+						else
+							cellNumber = searchInput[1] + searchInput[2];
 
-				 	draw(cellId);
+					 	var cellId = "bingo-cell-" + cellLetter + "-" + cellNumber;
 
-				 	$(this).val("");
+					 	draw(cellId);
+
+					 	$(this).val("");
+			 		}
 		 		}
 			}
-		 });
-
-		 //reset bingo
-		 $("#btn-reset").click(function() {
-		 	var pass = prompt("Enter the password to reset.\nPassword:");
-
-		 	if(pass === password)
-		 		clearBingo();
-		 	else
-		 		alert("Did not match.");
 		 });
 		/****Bingo Cells (end)****/
 
@@ -329,7 +329,7 @@ $(document).ready(function() {
 
 			setTimeout(function() {
 				transitionPage("current-pattern-show", "main");
-			}, 5000);
+			}, 20000);
 		}
 
 		$("#patterns #btn-select").click(function() {
@@ -365,5 +365,14 @@ $(document).ready(function() {
 		}, 5000);
 		
 		/****Logo Transition (end)****/
+
+		$("#current-draw").click(function() {
+			transitionPage("current-draw", "main");
+		});
+		$("#current-pattern-show").click(function() {
+			transitionPage("current-pattern-show", "main");
+		});
+
+
 	}	/****Storage check (end)****/
 });
