@@ -115,6 +115,8 @@ $(document).ready(function() {
 		  		$("#" + cellId).removeClass("marked");
 		  		localStorage.setItem(cellId, "unmarked");
 		  	}
+
+		  	location.reload();
 		  }
 
 		  function updateDraw(cellId) {
