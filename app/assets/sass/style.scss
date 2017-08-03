@@ -343,4 +343,46 @@ label {
 			color: $primary-color;
 		}
 	}
+
+	#current-pattern-show {
+		flex: 1;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		color: $primary-color;
+
+		table {
+			margin-top: 30px;
+			
+			td {
+				pointer-events: none;
+				width: 80px;
+				height: 80px;
+			}
+		}
+
+		
+
+		div {
+			flex: 1;
+
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+
+			h1, h2, h3 {
+				margin: 0;
+			}
+			h1 {
+				font-size: 80px;
+			}
+			h2 {
+				font-size: 50px;
+			}
+			h3 {
+				font-size: 30px;
+			}
+		}
+	}
 }

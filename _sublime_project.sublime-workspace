@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"current-at",
+				"current-pattern-show"
+			],
+			[
+				"current-pat",
+				"current-pattern-show"
+			],
+			[
+				"data",
+				"data-pattern-num"
+			],
+			[
+				"previous-",
+				"previous-before-previous-draw"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"prev",
+				"previous-draw"
+			],
+			[
+				"null",
+				"null-previous-before-previous-draw"
+			],
+			[
+				"previou",
+				"previous-before-previous-draw"
+			],
+			[
+				"previous",
+				"previous-before-previous-draw"
+			],
+			[
+				"previo",
+				"previous-before-previous-draw"
+			],
+			[
+				"previ",
+				"previousDraw"
+			],
+			[
+				"previoudra",
+				"previousDraw"
+			],
+			[
+				"transition",
+				"transitionPage"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"locl",
+				"localStorage"
+			],
+			[
 				"tran",
 				"base-transition"
 			],
@@ -35,7 +95,7 @@
 			"file": "app/index.html",
 			"settings":
 			{
-				"buffer_size": 3482,
+				"buffer_size": 3728,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -44,7 +104,7 @@
 			"file": "app/assets/css/style.css",
 			"settings":
 			{
-				"buffer_size": 5894,
+				"buffer_size": 6802,
 				"line_ending": "Windows"
 			}
 		},
@@ -52,7 +112,7 @@
 			"file": "app/assets/js/script.js",
 			"settings":
 			{
-				"buffer_size": 5180,
+				"buffer_size": 10321,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -61,7 +121,7 @@
 			"file": "app/assets/js/startup.js",
 			"settings":
 			{
-				"buffer_size": 2877,
+				"buffer_size": 3591,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -70,7 +130,7 @@
 			"file": "app/assets/sass/style.scss",
 			"settings":
 			{
-				"buffer_size": 4953,
+				"buffer_size": 5665,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -213,6 +273,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"#patterns",
+			"editPattern",
+			"editp",
+			".css",
+			"previous-draw",
+			"input",
+			".val(",
+			"h1",
 			"patterNum",
 			"$(\"#btn-edit",
 			"#edit-",
@@ -248,15 +316,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3482,
+						"buffer_size": 3728,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3105,
-								3105
+								3527,
+								3527
 							]
 						],
 						"settings":
@@ -266,7 +334,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 810.0,
+						"translation.y": 959.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -284,15 +352,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5894,
+						"buffer_size": 6802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1055,
-								1055
+								2664,
+								2664
 							]
 						],
 						"settings":
@@ -302,7 +370,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 558.0,
+						"translation.y": 1044.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -320,15 +388,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5180,
+						"buffer_size": 10321,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								636,
-								636
+								8473,
+								8473
 							]
 						],
 						"settings":
@@ -336,8 +404,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4
 						},
-						"translation.x": 0.0,
-						"translation.y": 256.0,
+						"translation.x": 46.0,
+						"translation.y": 5037.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -349,15 +417,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2877,
+						"buffer_size": 3591,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2311,
-								2311
+								2474,
+								2474
 							]
 						],
 						"settings":
@@ -366,7 +434,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 945.0,
+						"translation.y": 1366.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -384,15 +452,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4953,
+						"buffer_size": 5665,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4830,
-								4830
+								5130,
+								5130
 							]
 						],
 						"settings":
@@ -402,7 +470,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5126.0,
+						"translation.y": 5188.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -421,8 +489,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								83,
+								83
 							]
 						],
 						"settings":

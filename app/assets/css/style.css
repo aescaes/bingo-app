@@ -255,5 +255,30 @@ label {
       text-align: center;
       text-transform: uppercase;
       color: #00c5e6; }
+  #wrapper #current-pattern-show {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #00c5e6; }
+    #wrapper #current-pattern-show table {
+      margin-top: 30px; }
+      #wrapper #current-pattern-show table td {
+        pointer-events: none;
+        width: 80px;
+        height: 80px; }
+    #wrapper #current-pattern-show div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: center; }
+      #wrapper #current-pattern-show div h1, #wrapper #current-pattern-show div h2, #wrapper #current-pattern-show div h3 {
+        margin: 0; }
+      #wrapper #current-pattern-show div h1 {
+        font-size: 80px; }
+      #wrapper #current-pattern-show div h2 {
+        font-size: 50px; }
+      #wrapper #current-pattern-show div h3 {
+        font-size: 30px; }
 
 /*# sourceMappingURL=style.css.map */

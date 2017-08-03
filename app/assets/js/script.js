@@ -284,37 +284,50 @@ $(document).ready(function() {
 
 		/****Select Pattern (start)****/
 		function selectPattern(patternNum) {
-			$("#current-pattern").remove();
-			$("#col-current-pattern").append(
+			$("#col-current-pattern #current-pattern, #current-pattern-show #current-pattern, #current-pattern-show div").remove();
+			$("#col-current-pattern, #current-pattern-show").append(
 				"<table class='pattern' id='current-pattern' data-pattern-num='" + patternNum + "' align='center' cellspacing='10px'>" +
 				"</table>"
 			);
 
 			for(var row = 1; row <= 5; row++) {
-				$("#current-pattern").append(
+				$("#col-current-pattern #current-pattern, #current-pattern-show #current-pattern").append(
 					"<tr id='r" + row + "'></tr>"
 				);
 
 				for(var col = 1; col <= 5; col++) {
+					var cellId = patternNum + "-r" + row + "c" + col;
+					var cellStatus = localStorage.getItem(cellId);
+
 					if(row == 3 && col == 3)
-						$("#current-pattern #r" + row).append(
-							"<td class='bonus' id='" + patternNum + "-r" + row + "c" + col + "'></td>"
+						$("#col-current-pattern #current-pattern #r" + row + ", #current-pattern-show #current-pattern #r" + row).append(
+							"<td class='bonus' id='" + cellId + "'></td>"
 						);
 					else {
-						var cellId = patternNum + "-r" + row + "c" + col;
-						var cellStatus = localStorage.getItem(cellId);
-
-						$("#current-pattern #r" + row).append(
+						$("#col-current-pattern #current-pattern #r" + row + ", #current-pattern-show #current-pattern #r" + row).append(
 							"<td id='" + cellId + "'></td>"
 						);
 
 						if(cellStatus === "marked")
-							$("#" + cellId).addClass("marked");
+							$("#col-current-pattern #" + cellId + ", #current-pattern-show #" + cellId).addClass("marked");
 					}
 				}
 			}
 
-			transitionPage("patterns", "main");
+			var num = patternNum[patternNum.length - 1];
+			$("#current-pattern-show").append(
+				"<div>" +
+				"  <h3>Game " + num + "</h3>" +
+				"  <h1 class='pattern-name' id='pattern-" + num + "-name'>" + localStorage.getItem("pattern-" + num) + "</h1>" +
+				"  <h2>Price: P" + localStorage.getItem("pattern-" + num + "-price") + ".00</h2>" +
+				"</div>"
+			);
+
+			transitionPage("patterns", "current-pattern-show");
+
+			setTimeout(function() {
+				transitionPage("current-pattern-show", "main");
+			}, 5000);
 		}
 
 		$("#patterns #btn-select").click(function() {
