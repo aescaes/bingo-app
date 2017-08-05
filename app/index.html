@@ -1,103 +1,95 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--<link rel="icon" href="../../favicon.ico">-->
-
-    <title>Palarong Pinoy</title>
-
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="main">
-        <div class="primary-row" id="row-bingo">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Palarong Pinoy</title>
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="main">
+                <div class="primary-row" id="row-bingo">
+                </div>
+                <div class="primary-row" id="row-control">
+                    <div id="col-left">
+                    <label for="inp-num-search">Cell:</label>
+                    <input class="inp-txt" id="inp-num-search">
+                    </div>
+                    <div id="col-right">
+                    <button class="btn" id="btn-pattern"><i class="fa fa-angle-double-right"></i></button>
+                    </div>
+                </div>
+                <div class="primary-row" id="row-footer">
+                    <div id="col-logo">
+                        <img id="logo-col" src="assets/img/logo_col.png" style="position: relative; top: -30px;"/>
+                        <img id="logo-codec" src="assets/img/logo_codec.png" style="position: relative; top: -30px;"/>
+                    </div>
+                    <div id="col-current-pattern">
+                        <table class="pattern" id="current-pattern" align="center" cellspacing="10px">
+                            <tr>
+                                <td id="pattern-r1c1"></td>
+                                <td id="pattern-r1c2"></td>
+                                <td id="pattern-r1c3"></td>
+                                <td id="pattern-r1c4"></td>
+                                <td id="pattern-r1c5"></td>
+                            </tr>
+                            <tr>
+                                <td id="pattern-r2c1"></td>
+                                <td id="pattern-r2c2"></td>
+                                <td id="pattern-r2c3"></td>
+                                <td id="pattern-r2c4"></td>
+                                <td id="pattern-r2c5"></td>
+                            </tr>
+                            <tr>
+                                <td id="pattern-r3c1"></td>
+                                <td id="pattern-r3c2"></td>
+                                <td class="bonus" id="pattern-r3c3"></td>
+                                <td id="pattern-r3c4"></td>
+                                <td id="pattern-r3c5"></td>
+                            </tr>
+                            <tr>
+                                <td id="pattern-r4c1"></td>
+                                <td id="pattern-r4c2"></td>
+                                <td id="pattern-r4c3"></td>
+                                <td id="pattern-r4c4"></td>
+                                <td id="pattern-r4c5"></td>
+                            </tr>
+                            <tr>
+                                <td id="pattern-r5c1"></td>
+                                <td id="pattern-r5c2"></td>
+                                <td id="pattern-r5c3"></td>
+                                <td id="pattern-r5c4"></td>
+                                <td id="pattern-r5c5"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="col-current-draw">
+                        <span id="current-draw-number"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="patterns">
+                <button class="btn-float btn-back" id="patterns-page"><i class="fa fa-chevron-left"></i></button>
+            </div>
+            <div id="pattern-edit">
+                <button class="btn-float btn-back" id="pattern-edit-page"><i class="fa fa-chevron-left"></i></button>
+                <div>
+                    <input class="inp-txt" id="inp-pattern-name" placeholder="Name">
+                    <input class="inp-txt" id="inp-pattern-price" placeholder="Price">
+                </div>
+            </div>
+            <div id="current-draw">
+                <span id="number"></span>
+            </div>
+            <div id="current-pattern-show">
+            </div>
         </div>
-        <div class="primary-row" id="row-control">
-          <div id="col-left">
-            <label for="inp-num-search">Cell:</label>
-            <input class="inp-txt" id="inp-num-search">
-          </div>
-          <div id="col-right">
-            <button class="btn" id="btn-pattern"><i class="fa fa-angle-double-right"></i></button>
-          </div>
-        </div>
-        <div class="primary-row" id="row-footer">
-          <div id="col-logo">
-            <img id="logo-col" src="assets/img/logo_col.png" style="position: relative; top: -30px;"/>
-            <img id="logo-codec" src="assets/img/logo_codec.png" style="position: relative; top: -30px;"/>
-          </div>
-          <div id="col-current-pattern">
-            <table class="pattern" id="current-pattern" align="center" cellspacing="10px">
-              <tr>
-                <td id="pattern-r1c1"></td>
-                <td id="pattern-r1c2"></td>
-                <td id="pattern-r1c3"></td>
-                <td id="pattern-r1c4"></td>
-                <td id="pattern-r1c5"></td>
-              </tr>
-              <tr>
-                <td id="pattern-r2c1"></td>
-                <td id="pattern-r2c2"></td>
-                <td id="pattern-r2c3"></td>
-                <td id="pattern-r2c4"></td>
-                <td id="pattern-r2c5"></td>
-              </tr>
-              <tr>
-                <td id="pattern-r3c1"></td>
-                <td id="pattern-r3c2"></td>
-                <td class="bonus" id="pattern-r3c3"></td>
-                <td id="pattern-r3c4"></td>
-                <td id="pattern-r3c5"></td>
-              </tr>
-              <tr>
-                <td id="pattern-r4c1"></td>
-                <td id="pattern-r4c2"></td>
-                <td id="pattern-r4c3"></td>
-                <td id="pattern-r4c4"></td>
-                <td id="pattern-r4c5"></td>
-              </tr>
-              <tr>
-                <td id="pattern-r5c1"></td>
-                <td id="pattern-r5c2"></td>
-                <td id="pattern-r5c3"></td>
-                <td id="pattern-r5c4"></td>
-                <td id="pattern-r5c5"></td>
-              </tr>
-            </table>
-          </div>
-          <div id="col-current-draw">
-            <span id="current-draw-number"></span>
-          </div>
-        </div>
-      </div>
-      
-      <div id="patterns">
-        <button class="btn-float btn-back" id="patterns-page"><i class="fa fa-chevron-left"></i></button>
-      </div>
 
-      <div id="pattern-edit">
-        <button class="btn-float btn-back" id="pattern-edit-page"><i class="fa fa-chevron-left"></i></button>
-        <div>
-          <input class="inp-txt" id="inp-pattern-name" placeholder="Name">
-          <input class="inp-txt" id="inp-pattern-price" placeholder="Price">
-        </div>
-      </div>
-
-      <div id="current-draw">
-        <span id="number"></span>
-      </div>
-
-      <div id="current-pattern-show">
-      </div>
-    </div>
-
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/startup.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/startup.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>

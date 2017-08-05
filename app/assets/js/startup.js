@@ -28,7 +28,7 @@ function loadBingoCells() {
 		//append primary cell to current row
 		$("#bingo-" + bingoLetter).append(
 				"<div class='bingo-cell primary-cell' id='bingo-cell-b'>" + bingoLetter + "</div>"
-			);
+		);
 
 		//append number cells to current row
 		for(var cellNum = rowCellStartNum; cellNum <= rowCellStartNum + 14; cellNum++) {

@@ -84,7 +84,7 @@ $(document).ready(function() {
 		 			$("#patterns #" + cellId).addClass("marked");
 		 		}
 		 	}
-		 }
+		}
 
 		 /*
 		  * Reset Bingo cell states to unmarked
@@ -117,9 +117,9 @@ $(document).ready(function() {
 		  	}
 
 		  	location.reload();
-		  }
+	  	}
 
-		  function updateDraw(cellId) {
+	  	function updateDraw(cellId) {
 		  	if($("#" + cellId).attr("class") !== "bingo-cell marked") {
 		 		$("#main #current-draw-number").html(localStorage.getItem("previous-draw"));
 		  	} else {
@@ -140,9 +140,9 @@ $(document).ready(function() {
 			 		$("#main #current-draw-number").html(currentDraw);
 			 	}, 10000);
 		 	}
-		  }
+	  	}
 
-		  function draw(cellId) {
+	  	function draw(cellId) {
 		  	if($("#" + cellId).attr("style") !== "pointer-events: none") {
 		  		if($("#" + cellId).attr("class") !== "bingo-cell marked") {
 			 		var previousDrawId = localStorage.getItem("previous-draw-id");
@@ -171,19 +171,19 @@ $(document).ready(function() {
 
 			 	updateCell(cellId);
 			 	updateDraw(cellId, previousBeforePreviousDraw, previousDraw);
-			 }
-		  } 
+		 	}
+	  	} 
 
-		 //mark a cell by click
-		 $(".bingo-cell").click(function(e) {
+		//mark a cell by click
+		$(".bingo-cell").click(function(e) {
 		 	// get the bingo cell id
 		 	var cellId = $(this).attr("id");
 		 	draw(cellId);
-		 });
+	 	});
 
-		 //mark a cell by input
-		 $("#inp-num-search").keypress(function(e) {
-		 	var key = e.which;
+	 	//mark a cell by input
+	 	$("#inp-num-search").keypress(function(e) {
+	 		var key = e.which;
 
 		 	if(key == 13) {
 		 		var searchInput = $("#inp-num-search").val();
@@ -213,7 +213,7 @@ $(document).ready(function() {
 			 		}
 		 		}
 			}
-		 });
+	 	});
 		/****Bingo Cells (end)****/
 
 

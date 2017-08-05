@@ -4,86 +4,6 @@
 		"selected_items":
 		[
 			[
-				"curen",
-				"current-draw"
-			],
-			[
-				"flex-",
-				"flex-grow"
-			],
-			[
-				"logo_co",
-				"logo_codec"
-			],
-			[
-				"col",
-				"column"
-			],
-			[
-				"current-at",
-				"current-pattern-show"
-			],
-			[
-				"current-pat",
-				"current-pattern-show"
-			],
-			[
-				"data",
-				"data-pattern-num"
-			],
-			[
-				"previous-",
-				"previous-before-previous-draw"
-			],
-			[
-				"local",
-				"localStorage"
-			],
-			[
-				"prev",
-				"previous-draw"
-			],
-			[
-				"null",
-				"null-previous-before-previous-draw"
-			],
-			[
-				"previou",
-				"previous-before-previous-draw"
-			],
-			[
-				"previous",
-				"previous-before-previous-draw"
-			],
-			[
-				"previo",
-				"previous-before-previous-draw"
-			],
-			[
-				"previ",
-				"previousDraw"
-			],
-			[
-				"previoudra",
-				"previousDraw"
-			],
-			[
-				"transition",
-				"transitionPage"
-			],
-			[
-				"remove",
-				"removeClass"
-			],
-			[
-				"locl",
-				"localStorage"
-			],
-			[
-				"tran",
-				"base-transition"
-			],
-			[
 				"border",
 				"cell-base-border"
 			],
@@ -121,7 +41,6 @@
 			"settings":
 			{
 				"buffer_size": 7723,
-				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -169,17 +88,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 246.0,
-		"last_filter": "material",
+		"height": 229.0,
+		"last_filter": "install p",
 		"selected_items":
 		[
 			[
-				"material",
-				"Material Theme: Activate theme"
-			],
-			[
 				"install p",
 				"Package Control: Install Package"
+			],
+			[
+				"material",
+				"Material Theme: Activate theme"
 			],
 			[
 				"icons",
@@ -202,7 +121,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 398.0
+		"width": 414.0
 	},
 	"console":
 	{
@@ -238,9 +157,7 @@
 	],
 	"file_history":
 	[
-		"/D/Projects/web/bingo-app/app/assets/js/startup.js",
-		"/D/Projects/web/bingo-app/app/add_pattern.html",
-		"/D/Projects/web/bingo-app/app/patterns.html",
+		"/D/win10/autorun.inf",
 		"/D/Projects/web/bizlight_theme/sass/app.scss",
 		"/D/Projects/web/bizlight_theme/sass/_customVariables.scss",
 		"/C/Users/Siong/Source/Repos/Klik/Klik/Klik/Content/stylesheet/_custom-fonts.scss",
@@ -290,24 +207,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"$(\"#inp",
-			"keycode",
-			"clearbin",
-			"clearBingo()",
-			"#patterns",
-			"editPattern",
-			"editp",
-			".css",
-			"previous-draw",
-			"input",
-			".val(",
-			"h1",
-			"patterNum",
-			"$(\"#btn-edit",
-			"#edit-",
-			"add",
-			".col-left",
-			"#inp-num",
 			"transition",
 			"colors",
 			"buttons"
@@ -344,8 +243,8 @@
 						"selection":
 						[
 							[
-								3310,
-								3310
+								0,
+								0
 							]
 						],
 						"settings":
@@ -355,10 +254,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1682.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -380,8 +279,8 @@
 						"selection":
 						[
 							[
-								880,
-								880
+								0,
+								0
 							]
 						],
 						"settings":
@@ -391,16 +290,16 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 558.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -416,20 +315,19 @@
 						"selection":
 						[
 							[
-								10837,
-								10837
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 6476.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -445,17 +343,18 @@
 						"selection":
 						[
 							[
-								2474,
-								2474
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1366.0,
+						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -480,18 +379,17 @@
 						"selection":
 						[
 							[
-								5426,
-								5426
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 2,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5749.0,
+						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -510,20 +408,19 @@
 						"selection":
 						[
 							[
-								83,
-								83
+								106,
+								106
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -531,7 +428,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -569,7 +466,7 @@
 		"cols":
 		[
 			0.0,
-			0.554172767204,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -588,7 +485,7 @@
 	"project": "_sublime_project.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -618,14 +515,14 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 226.0,
 	"status_bar_visible": true,
 	"template_settings":
