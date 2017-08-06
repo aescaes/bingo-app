@@ -1,63 +1,71 @@
 var bingo = {
 	password: "1234",
+	clearEnterPassword: "0000",
 	storage: localStorage,
 	loadCells: function() {
+		var letter = '', // current letter
+			section = "#row-bingo",
+			row = "", // current row
+			startNum = 0, // start number (b = 1, i = 16, ...)
+			cellId = "", // current cell id
+			cellState = ""; // current cell state
+
 		for(var c = 1; c <= 5; c++) {
-			var bingoLetter = '';
+			// set the right letter for each bingo row
+			if(c == 1) letter = 'b';
+			else if(c == 2) letter = 'i';
+			else if(c == 3) letter = 'n';
+			else if(c == 4) letter = 'g';
+			else if(c == 5) letter = 'o';
 
-			//set the right letter for each bingo row
-			if(c == 1) bingoLetter = 'b';
-			else if(c == 2) bingoLetter = 'i';
-			else if(c == 3) bingoLetter = 'n';
-			else if(c == 4) bingoLetter = 'g';
-			else if(c == 5) bingoLetter = 'o';
-
-			//append current row
-			$("#row-bingo").append(
-				"<div class='bingo-row' id='bingo-" + bingoLetter + "'></div>"
+			// append a new bingo row
+			$(section).append(
+				"<div class='bingo-row' id='bingo-" + letter + "'></div>"
 			);
 
-			//check the bingo row start number
-			var rowCellStartNum = 0;
-			if(bingoLetter === 'b') rowCellStartNum = 1;
-			else if(bingoLetter === 'i') rowCellStartNum = 16;
-			else if(bingoLetter === 'n') rowCellStartNum = 31;
-			else if(bingoLetter === 'g') rowCellStartNum = 46;
-			else if(bingoLetter === 'o') rowCellStartNum = 61;
+			// check the bingo row start number
+			if(letter === 'b') startNum = 1;
+			else if(letter === 'i') startNum = 16;
+			else if(letter === 'n') startNum = 31;
+			else if(letter === 'g') startNum = 46;
+			else if(letter === 'o') startNum = 61;
 
-			//append primary cell to current row
-			$("#bingo-" + bingoLetter).append(
-					"<div class='bingo-cell primary-cell' id='bingo-cell-b'>" + bingoLetter + "</div>"
+			// get the current row
+			row = "#bingo-" + letter;
+
+			// append primary cell (letters) to current row
+			$(row).append(
+				"<div class='bingo-cell primary-cell' id='bingo-cell-" + letter + "'>" + letter + "</div>"
 			);
 
-			//append number cells to current row
-			for(var cellNum = rowCellStartNum; cellNum <= rowCellStartNum + 14; cellNum++) {
-				$("#bingo-" + bingoLetter).append(
-					"<div class='bingo-cell' id='bingo-cell-" + bingoLetter + "-" + cellNum + "'>" + cellNum + "</div>"
+			// append number cells to current row
+			for(var num = startNum; num <= startNum + 14; num++) {
+				$(row).append(
+					"<div class='bingo-cell' id='bingo-cell-" + letter + "-" + num + "'>" + num + "</div>"
 				);
 
-				//get the id of the current cell
-				var cellId = "bingo-cell-" + bingoLetter + "-" + cellNum;
+				// get the id of current cell
+				cellId = "bingo-cell-" + letter + "-" + num;
 
-				//determine the cell state (Marked/Unmarked)
-				var cellState = this.storage.getItem(cellId);
+				// get the cell state of current cell (Marked/Unmarked)
+				cellState = this.storage.getItem(cellId);
 
-				//add a 'marked' class to cell if it is in marked state
+				// add a 'marked' class to cell if it is in marked state
 				if(cellState === "marked")
 					$("#" + cellId).addClass("marked");
 				else
-					//initialize the cell state to unmarked;
+					// initialize the cell state to unmarked;
 					this.storage.setItem(cellId, "unmarked");
 			}
 		}
 	},
 	startLogoTransition: function() {
 		var nextLogo = "codec";
+
 		$("#logo-col").fadeOut(3000, function() {
 			$("#logo-codec").fadeIn(3000);
 			nextLogo = "col";
 		});
-
 
 		setInterval(function() {
 			if(nextLogo === "codec") {
@@ -74,57 +82,62 @@ var bingo = {
 		}, 5000);
 	},
 	clear: function() {
-  	var bingoCellCount = $(".bingo-cell").length;
-  	var letter; //for getting the current letter
-  	var cellId;
+	  	var cellCount = $(".bingo-cell").length,
+	  			letter = '',
+	  			cellId = "";
 
-  	//remove each item
-  	for(var num = 1; num <= (bingoCellCount - 5); num++) { // where 5 is for b, i, n, g, o
-  		//determine the letter
-  		if(num >= 1 && num <= 15)
-  			letter = 'b';
-  		else if(num >= 16 && num <= 30)
-  			letter = 'i';
-  		else if(num >= 31 && num <= 45)
-  			letter = 'n';
-  		else if(num >= 46 && num <= 60)
-  			letter = 'g';
-  		else if(num >= 61 && num <= 75)
-  			letter = 'o';
+	  	// unmark each state
+	  	for(var num = 1; num <= (cellCount - 5); num++) { // where 5 is for b, i, n, g and o
+	  		// determine the letter
+	  		if(num >= 1 && num <= 15)
+	  			letter = 'b';
+	  		else if(num >= 16 && num <= 30)
+	  			letter = 'i';
+	  		else if(num >= 31 && num <= 45)
+	  			letter = 'n';
+	  		else if(num >= 46 && num <= 60)
+	  			letter = 'g';
+	  		else if(num >= 61 && num <= 75)
+	  			letter = 'o';
 
-  		//get the cell id
-  		cellId = "bingo-cell-" + letter + "-" + num;
+	  		// get the cell id
+	  		cellId = "bingo-cell-" + letter + "-" + num;
 
-  		//unmark cell by removing the 'marked' class
-  		$("#" + cellId).removeClass("marked");
-  		this.storage.setItem(cellId, "unmarked");
-  	}
+	  		// unmark cell by removing the 'marked' class
+	  		$("#" + cellId).removeClass("marked");
+	  		this.storage.setItem(cellId, "unmarked");
+	  	}
 
-  	location.reload();
+	  	// reload page after clearing
+	  	location.reload();
 	},
-	transitionPage: function(currentPage, redirectPage) {
-		$("#" + currentPage).fadeOut("slow", function() {
-			$("#" + redirectPage).css("display", "flex");
+	transitionPage: function(current, redirect) {
+		$("#" + current).fadeOut("slow", function() {
+			// revert to original display
+			$("#" + redirect).css("display", "flex");
 
-			if(redirectPage === "main") 
+			// hide back button when in the main page
+			if(redirect === "main") 
 				$(".btn-float").hide();
 			else
 				$(".btn-float").show();
 
-			if(currentPage === "pattern-edit")
+			// remove the current pattern being edited
+			// if from the pattern edit page
+			if(current === "pattern-edit")
 				$("#pattern-edit table#edit-pattern").remove();
 
-			$("#" + redirectPage).fadeIn("slow");
+			$("#" + redirect).fadeIn("slow");
 		});	
 	},
 	updateCell: function(cellId, option) {
-	 	// get the current state of the cell
-	 	var cellState = this.storage.getItem(cellId);
+	 	var cellState = this.storage.getItem(cellId); // state of the selected cell
 
 	 	if(cellState === "marked") {
 	 		this.storage.setItem(cellId, "unmarked");
 	 		$("#" + cellId).removeClass("marked");
 
+	 		// when updating cells from pattern edit page
 	 		if(option === "edit") {
 	 			$("#edit-pattern #" + cellId).removeClass("marked");
 	 			$("#patterns #" + cellId).removeClass("marked");
@@ -133,6 +146,7 @@ var bingo = {
 	 		this.storage.setItem(cellId, "marked");
 	 		$("#" + cellId).addClass("marked");
 
+	 		// when updating cells from pattern edit page
 	 		if(option === "edit") {
 	 			$("#edit-pattern #" + cellId).addClass("marked");
 	 			$("#patterns #" + cellId).addClass("marked");
@@ -140,62 +154,77 @@ var bingo = {
 	 	}
 	},
 	updateDraw: function(cellId) {
-  	if($("#" + cellId).attr("class") !== "bingo-cell marked") {
- 		$("#main #current-draw-number").html(this.storage.getItem("previous-draw"));
-  	} else {
-  		if(this.storage.getItem("null-previous-before-previous-draw") === "yes")
-  			this.storage.setItem("previous-before-previous-draw", "null*");
+		var row = "";
+			currentDraw = "";
 
-	 		var cellLetter = $("#" + cellId).parent().closest("div").attr("id");
-	 		cellLetter = cellLetter[cellLetter.length - 1];
+	  	if($("#" + cellId).attr("class") !== "bingo-cell marked") {
+ 			$("#main #current-draw-number").html(this.storage.getItem("recent-draw"));
+	  	} else {
+	  		// drop the draw before most recent
+	  		if(this.storage.getItem("null-draw-before-recent") === "yes")
+	  			this.storage.setItem("draw-before-recent", "null*");
 
-	 		var currentDraw = cellLetter + "-" + $("#" + cellId).html();
+  			// get the row of the selected cell
+	 		row = $("#" + cellId).parent().closest("div").attr("id");
+	 		row = row.charAt(row.length - 1);
 
+	 		// get the current draw to display
+	 		currentDraw = row + "-" + $("#" + cellId).html();
+
+	 		// display draw
 	 		$("#current-draw #number").html(currentDraw);
  			this.transitionPage("main", "current-draw");
-
-	 		setTimeout(function() {
-		 		bingo.transitionPage("current-draw", "main");
-		 		$("#main #current-draw-number").html(currentDraw);
-		 	}, 10000);
+ 			$("#main #current-draw-number").html(currentDraw);
  		}
 	},
 	draw: function(cellId) {
+		var recentDrawId = "",
+			recentDraw = "",
+			drawBeforeRecent = "";
+			
+		// if the selected cell is not disabled
 		if($("#" + cellId).attr("style") !== "pointer-events: none") {
+			// if the selected cell is not marked
 			if($("#" + cellId).attr("class") !== "bingo-cell marked") {
-				var previousDrawId = this.storage.getItem("previous-draw-id");
+				recentDrawId = this.storage.getItem("recent-draw-id");
 
-				if($("#" + previousDrawId).attr("class") === "bingo-cell marked")
-					$("#" + previousDrawId).attr("style", "pointer-events: none");
+				// disable cell if marked
+				if($("#" + recentDrawId).attr("class") === "bingo-cell marked")
+					$("#" + recentDrawId).attr("style", "pointer-events: none");
 
-				this.storage.setItem("previous-draw-id", cellId);
+				this.storage.setItem("recent-draw-id", cellId);
 
-				var previousDraw = localStorage.getItem("previous-draw");
-				var previousBeforePreviousDraw = localStorage.getItem("previous-before-previous-draw");
+				recentDraw = localStorage.getItem("recent-draw");
+				drawBeforeRecent = localStorage.getItem("draw-before-recent");
 
-				if(previousBeforePreviousDraw === previousDraw) {
-					this.storage.setItem("previous-draw", previousDraw);
-					this.storage.setItem("null-previous-before-previous-draw", "yes");
+				if(drawBeforeRecent === recentDraw) {
+					this.storage.setItem("recent-draw", recentDraw);
+					this.storage.setItem("null-draw-before-recent", "yes");
 				} else {
-					this.storage.setItem("previous-draw", $("#current-draw #number").html());
-					this.storage.setItem("null-previous-before-previous-draw", "no");
+					this.storage.setItem("recent-draw", $("#current-draw #number").html());
+					this.storage.setItem("null-draw-before-recent", "no");
 				}
 			} else {
-				var previousDraw = this.storage.getItem("previous-draw");
-				var previousBeforePreviousDraw = this.storage.getItem("previous-before-previous-draw");
+				var recentDraw = this.storage.getItem("recent-draw");
+				var drawBeforeRecent = this.storage.getItem("draw-before-recent");
 
-				localStorage.setItem("previous-before-previous-draw", previousDraw);
+				localStorage.setItem("draw-before-recent", recentDraw);
 			}
 
 			this.updateCell(cellId);
-			this.updateDraw(cellId, previousBeforePreviousDraw, previousDraw);
+			this.updateDraw(cellId, drawBeforeRecent, recentDraw);
 		}
 	},
 	pattern: {
+		numOfPattern: 8,
 		loadPatterns: function() {
-			var numOfPattern = 8;
+			var cellId = "",
+				cellStatus = "",
+				patternName = "",
+				patternPrice = "";
 
-			for(var patternNum = 1; patternNum <= numOfPattern; patternNum++) {
+			// append a pattern block
+			for(var patternNum = 1; patternNum <= this.numOfPattern; patternNum++) {
 				$("#patterns").append(
 					"<div id='pattern-block-" + patternNum + "'>" +
 					"  <table class='pattern' id='pattern-" + patternNum + "' align='center' cellspacing='10px'>" +
@@ -203,19 +232,22 @@ var bingo = {
 					"</div>"
 				);
 
+				// append pattern row
 				for(var row = 1; row <= 5; row++) {
 					$("#patterns #pattern-block-" + patternNum + " table").append(
 						"<tr id='r" + row + "'></tr>"
 					);
 
+					// append pattern cells to currentr ow
 					for(var col = 1; col <= 5; col++) {
+						// append the bonus cell
 						if(row == 3 && col == 3)
 							$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
 								"<td class='bonus' id='pattern-" + patternNum + "-r" + row + "c" + col + "'></td>"
 							);
 						else {
-							var cellId = "pattern-" + patternNum + "-r" + row + "c" + col;
-							var cellStatus = bingo.storage.getItem(cellId);
+							cellId = "pattern-" + patternNum + "-r" + row + "c" + col;
+							cellStatus = bingo.storage.getItem(cellId);
 
 							$("#patterns #pattern-block-" + patternNum + " table tr#r" + row).append(
 								"<td id='" + cellId + "'></td>"
@@ -227,8 +259,8 @@ var bingo = {
 					}
 				}
 
-				var patternName = bingo.storage.getItem("pattern-" + patternNum);
-				var patternPrice = bingo.storage.getItem("pattern-" + patternNum + "-price");
+				patternName = bingo.storage.getItem("pattern-" + patternNum);
+				patternPrice = bingo.storage.getItem("pattern-" + patternNum + "-price");
 
 				if(typeof(patternName) === "object")
 					patternName = "Slot " + patternNum;
@@ -276,6 +308,8 @@ var bingo = {
 					}
 				}
 			}
+
+			bingo.transitionPage("patterns", "pattern-edit");
 
 			$("#edit-pattern td").click(function() {
 				var cellId = $(this).attr("id");
@@ -334,10 +368,6 @@ var bingo = {
 			);
 
 			bingo.transitionPage("patterns", "current-pattern-show");
-
-			setTimeout(function() {
-				bingo.transitionPage("current-pattern-show", "main");
-			}, 20000);
 		}
 	}
 };
