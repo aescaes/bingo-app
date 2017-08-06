@@ -41,7 +41,7 @@ $(document).ready(function() {
 		$(".bingo-cell").click(function(e) {
 		 	//  get the bingo cell id, ex "bingo-cell-g-53"
 		 	var cellId = $(this).attr("id");
-
+		 	
 		 	bingo.draw(cellId);
 	 	});
 
@@ -64,7 +64,8 @@ $(document).ready(function() {
 		 		} else { // update a cell if entered a cell, ex. b13
 			 		if(searchInput.length > 0) {
 			 			// get the cell id
-					 	var cellId = searchInput.substring(0, searchInput.length)
+					 	var cellId = "bingo-cell-" + searchInput.charAt(0) + "-" +
+					 				 searchInput.substring(1, searchInput.length);
 
 					 	bingo.draw(cellId);
 
