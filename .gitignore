@@ -1,0 +1,19 @@
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+.editorconfig
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Others
+#-------------------------
+css
+fonts
+img
+jquery-3.2.1.min.js
