@@ -1,3 +1,5 @@
+_This app will soon be rewritten to a React app with new features_
+
 # Bingo App
 
 A live-viewing application while playing bingo.
